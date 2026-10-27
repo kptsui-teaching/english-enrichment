@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="英文增潤小冊子 — Paper 3 Vocabulary List + MTR Station Names 學生自學網頁">
+<title>英文增潤小冊子｜Paper 3 Vocabulary + MTR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --ink: #1a2332;
+  --muted: #5a6a7e;
+  --line: #e2e8f0;
+  --primary: #1d4ed8;
+  --primary-soft: #dbeafe;
+  --accent: #0f766e;
+  --accent-soft: #ccfbf1;
+  --warn: #b45309;
+  --danger: #b91c1c;
+  --ok: #15803d;
+  --shadow: 0 8px 24px rgba(15,23,42,.08);
+  --radius: 16px;
+  --tap: 44px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 120px; }
+body {
+  margin: 0;
+  font-family: "Noto Sans TC", "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.55;
+  -webkit-text-size-adjust: 100%;
+}
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 45%, #0f766e 100%);
+  color: #fff;
+  padding: 2.5rem 1.25rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto -20% -40% 40%;
+  height: 280px;
+  background: radial-gradient(circle, rgba(255,255,255,.18), transparent 70%);
+  pointer-events: none;
+}
+.hero-inner { max-width: 960px; margin: 0 auto; position: relative; z-index: 1; }
+.hero .school { opacity: .9; font-size: .95rem; margin: 0 0 .5rem; letter-spacing: .02em; }
+.hero h1 { margin: 0 0 .4rem; font-size: clamp(1.6rem, 4.5vw, 2.35rem); font-weight: 800; letter-spacing: .02em; }
+.hero .subtitle { margin: 0 0 1.1rem; font-size: clamp(1rem, 2.8vw, 1.15rem); opacity: .95; font-family: Inter, "Noto Sans TC", sans-serif; }
+.tip-box {
+  display: inline-flex; gap: .6rem; align-items: flex-start;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.28);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: .75rem 1rem;
+  max-width: 36rem;
+  font-size: .95rem;
+}
+.tip-box strong { display: block; margin-bottom: .15rem; }
+
+.toolbar {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 2px 12px rgba(15,23,42,.04);
+}
+.toolbar-inner {
+  max-width: 960px; margin: 0 auto;
+  padding: .65rem 1rem;
+  display: flex; flex-wrap: wrap; gap: .5rem; align-items: center;
+}
+.search-wrap { flex: 1 1 220px; position: relative; }
+.search-wrap input {
+  width: 100%;
+  min-height: var(--tap);
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  padding: .65rem .9rem .65rem 2.5rem;
+  font: inherit; font-size: 1rem;
+  background: #fff;
+}
+.search-wrap input:focus { outline: 2px solid var(--primary-soft); border-color: var(--primary); }
+.search-wrap .icon {
+  position: absolute; left: .85rem; top: 50%; transform: translateY(-50%);
+  color: var(--muted); pointer-events: none; font-size: 1rem;
+}
+.btn {
+  min-height: var(--tap);
+  border: none; border-radius: 12px;
+  padding: .55rem 1rem;
+  font: inherit; font-weight: 600; font-size: .95rem;
+  cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; gap: .35rem;
+  transition: transform .08s ease, background .15s;
+}
+.btn:active { transform: scale(.98); }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: #1e40af; }
+.btn-secondary { background: var(--primary-soft); color: var(--primary); }
+.btn-secondary:hover { background: #bfdbfe; }
+.btn-ghost { background: #f1f5f9; color: var(--ink); }
+.btn-ghost:hover { background: #e2e8f0; }
+.btn-accent { background: var(--accent); color: #fff; }
+.btn-accent:hover { background: #0d9488; }
+.hide-zh .zh, .hide-zh .ex-zh {
+  filter: blur(5px);
+  user-select: none;
+  transition: filter .2s;
+}
+.hide-zh .zh:hover, .hide-zh .ex-zh:hover { filter: blur(0); }
+
+.wrap { max-width: 960px; margin: 0 auto; padding: 1.25rem 1rem 4rem; }
+
+.nav-panel {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.1rem 1.15rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.nav-panel h2 { margin: 0 0 .65rem; font-size: 1.15rem; }
+.nav-group { margin-bottom: .85rem; }
+.nav-group:last-child { margin-bottom: 0; }
+.nav-label {
+  font-size: .8rem; font-weight: 700; color: var(--muted);
+  text-transform: uppercase; letter-spacing: .04em; margin-bottom: .4rem;
+}
+.nav-chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+.nav-chip {
+  display: inline-flex; align-items: center;
+  min-height: 36px;
+  padding: .35rem .7rem;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: var(--ink);
+  font-size: .88rem; font-weight: 500;
+  text-decoration: none !important;
+}
+.nav-chip:hover { background: var(--primary-soft); color: var(--primary); }
+.nav-chip.quiz { background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+
+.part-head {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1rem;
+  margin: 1.75rem 0 .85rem;
+}
+.part-head h1 {
+  margin: 0; font-size: clamp(1.35rem, 3.5vw, 1.7rem);
+  padding-left: .75rem; border-left: 5px solid var(--primary);
+}
+.part-head .en { color: var(--muted); font-weight: 500; font-size: 1rem; font-family: Inter, sans-serif; }
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.15rem 1.1rem 1.35rem;
+  margin-bottom: 1rem;
+}
+.card h2 {
+  margin: 0 0 .9rem;
+  font-size: 1.2rem;
+  display: flex; flex-wrap: wrap; align-items: center; gap: .45rem;
+}
+.card h3 {
+  margin: 1.25rem 0 .65rem;
+  font-size: 1.05rem;
+  color: var(--accent);
+}
+.badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 1.7rem; height: 1.7rem;
+  padding: 0 .4rem;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  font-size: .85rem; font-weight: 700;
+}
+.badge.mtr { background: var(--accent); font-size: .7rem; letter-spacing: .02em; }
+.en-title { color: var(--muted); font-weight: 500; font-size: .95rem; font-family: Inter, sans-serif; }
+
+.table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 12px; border: 1px solid var(--line); }
+table.vocab {
+  width: 100%; border-collapse: collapse; font-size: .98rem; min-width: 280px;
+}
+table.vocab th, table.vocab td {
+  padding: .7rem .85rem; text-align: left; border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+table.vocab th {
+  background: #f8fafc; font-weight: 700; font-size: .85rem;
+  color: var(--muted); position: sticky; top: 0;
+}
+table.vocab tr:last-child td { border-bottom: none; }
+table.vocab tbody tr:nth-child(even) { background: #fafbfc; }
+table.vocab tbody tr:hover { background: var(--primary-soft); }
+table.vocab tr.hidden { display: none; }
+td.num { width: 3rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+td.en { font-family: Inter, "Noto Sans TC", sans-serif; font-weight: 600; color: #0f172a; }
+td.zh { color: #334155; }
+
+.examples { margin: 0; padding-left: 1.25rem; }
+.examples li { margin-bottom: .65rem; }
+.ex-zh { color: #334155; }
+.ex-en { font-family: Inter, sans-serif; color: #0f172a; font-weight: 500; }
+.arrow { color: var(--muted); margin: 0 .25rem; }
+
+.mtr-tip {
+  background: linear-gradient(90deg, var(--accent-soft), #fff);
+  border: 1px solid #99f6e4;
+  border-radius: 12px;
+  padding: .9rem 1rem;
+  margin-bottom: 1rem;
+  color: #134e4a;
+  font-weight: 500;
+}
+.continued {
+  text-align: center; color: var(--muted); font-style: italic;
+  padding: 1rem; margin: .5rem 0 1.5rem;
+  border: 1px dashed var(--line); border-radius: 12px;
+}
+
+/* Quiz */
+.quiz-panel { }
+.quiz-modes { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
+.quiz-modes .btn.active { outline: 2px solid var(--primary); outline-offset: 2px; }
+.quiz-stats {
+  display: flex; flex-wrap: wrap; gap: .75rem 1.25rem;
+  margin-bottom: 1rem; font-size: .95rem; color: var(--muted);
+}
+.quiz-stats strong { color: var(--ink); }
+.quiz-card {
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.25rem 1rem;
+  min-height: 180px;
+}
+.quiz-prompt-label { font-size: .8rem; font-weight: 700; color: var(--muted); margin-bottom: .35rem; }
+.quiz-prompt {
+  font-size: clamp(1.35rem, 4vw, 1.75rem);
+  font-weight: 800; margin: 0 0 .35rem;
+  font-family: Inter, "Noto Sans TC", sans-serif;
+}
+.quiz-cat { font-size: .85rem; color: var(--muted); margin-bottom: 1rem; }
+.quiz-options { display: grid; gap: .5rem; }
+.quiz-opt {
+  min-height: var(--tap);
+  text-align: left;
+  width: 100%;
+  border: 1.5px solid var(--line);
+  background: #fff;
+  border-radius: 12px;
+  padding: .7rem 1rem;
+  font: inherit; font-size: 1rem;
+  cursor: pointer;
+}
+.quiz-opt:hover:not(:disabled) { border-color: var(--primary); background: var(--primary-soft); }
+.quiz-opt.correct { border-color: var(--ok); background: #dcfce7; color: var(--ok); font-weight: 700; }
+.quiz-opt.wrong { border-color: var(--danger); background: #fee2e2; color: var(--danger); }
+.quiz-opt:disabled { cursor: default; opacity: 1; }
+.quiz-type-row { display: flex; flex-wrap: wrap; gap: .5rem; }
+.quiz-type-row input {
+  flex: 1 1 180px;
+  min-height: var(--tap);
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  padding: .65rem .9rem;
+  font: inherit; font-size: 1.05rem;
+}
+.quiz-feedback {
+  margin-top: .85rem; padding: .7rem .85rem; border-radius: 10px;
+  font-weight: 600; display: none;
+}
+.quiz-feedback.show { display: block; }
+.quiz-feedback.ok { background: #dcfce7; color: var(--ok); }
+.quiz-feedback.bad { background: #fee2e2; color: var(--danger); }
+.quiz-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+
+.empty-filter {
+  display: none; text-align: center; color: var(--muted);
+  padding: 2rem 1rem; background: var(--surface); border-radius: var(--radius);
+}
+.empty-filter.show { display: block; }
+
+.site-footer {
+  text-align: center;
+  padding: 1.5rem 1rem 2.5rem;
+  color: var(--muted);
+  font-size: .9rem;
+  border-top: 1px solid var(--line);
+  background: #fff;
+}
+
+@media (max-width: 560px) {
+  .hero { padding: 2rem 1rem 1.6rem; }
+  .card { padding: 1rem .85rem 1.15rem; }
+  table.vocab th, table.vocab td { padding: .6rem .65rem; }
+  .toolbar-inner { padding: .55rem .75rem; }
+}
+
+/* Word Cards / 字卡 */
+.mode-tabs{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+.mode-tabs .mode-btn{
+  min-height:40px;padding:.45rem 1rem;border-radius:999px;border:2px solid var(--primary);
+  background:#fff;color:var(--primary);font:inherit;font-weight:600;cursor:pointer;
+}
+.mode-tabs .mode-btn.on{background:var(--primary);color:#fff}
+.browse-block.hidden-mode,.cards-block.hidden-mode{display:none!important}
+.cards-block .card-tip{
+  background:#fffaf0;border:1px solid #f6ad55;border-radius:12px;
+  padding:.75rem 1rem;margin-bottom:.85rem;color:#744210;font-weight:500;
+}
+.cards-block .vnote{
+  background:#fff5f5;border:1px solid #feb2b2;color:#9b2c2c;
+  padding:.7rem 1rem;border-radius:10px;margin:.5rem 0 .85rem;display:none;
+}
+.cards-bar{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.75rem}
+.cards-bar .card-search{
+  flex:1 1 200px;min-height:var(--tap);border:1.5px solid var(--line);
+  border-radius:12px;padding:.65rem .9rem;font:inherit;font-size:1rem;background:#fff;
+}
+.lang-tog{display:inline-flex;gap:.35rem}
+.lang-tog button{
+  min-height:40px;padding:.4rem .9rem;border-radius:999px;border:2px solid var(--primary);
+  background:#fff;color:var(--primary);font:inherit;font-weight:600;cursor:pointer;
+}
+.lang-tog button.on{background:var(--primary);color:#fff}
+.card-filters{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.65rem}
+.card-filters button{
+  min-height:36px;padding:.35rem .75rem;border-radius:999px;border:0;
+  background:#f1f5f9;color:var(--ink);font:inherit;font-size:.88rem;font-weight:500;cursor:pointer;
+}
+.card-filters button.on{background:var(--primary);color:#fff}
+#cardCount{color:var(--muted);margin:0 0 .75rem;font-size:.95rem}
+.card-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;
+}
+.flip-card{perspective:1000px;min-height:240px}
+.flip-card .inner{
+  position:relative;width:100%;height:100%;min-height:240px;
+  transition:transform .5s;transform-style:preserve-3d;
+}
+.flip-card.flip .inner{transform:rotateY(180deg)}
+.flip-card .face{
+  position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  background:#fff;border:2px solid var(--line);border-radius:16px;padding:14px;
+  box-shadow:0 2px 8px rgba(15,23,42,.06);
+  display:flex;flex-direction:column;overflow:auto;
+}
+.flip-card .face.back{transform:rotateY(180deg);background:#f0f7ff}
+.flip-card .tag{font-size:.78rem;color:var(--muted);font-weight:600}
+.flip-card .big-en{
+  font-family:Inter,"Noto Sans TC",sans-serif;
+  font-size:clamp(1.45rem,4vw,2rem);font-weight:800;text-align:center;
+  margin:18px 0 8px;color:#1e3a8a;line-height:1.25;
+}
+.flip-card .big-zh{
+  font-size:clamp(1.5rem,4.2vw,2.2rem);font-weight:800;text-align:center;
+  margin:18px 0 8px;color:#1a365d;line-height:1.3;
+}
+.flip-card .hint{text-align:center;color:var(--muted);font-size:.85rem;margin-bottom:.5rem}
+.flip-card .card-btns{
+  display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:auto;padding-top:8px;
+}
+.flip-card .card-btns button{
+  font:inherit;font-size:.92rem;padding:8px 12px;border:0;border-radius:10px;
+  background:#edf2f7;cursor:pointer;min-height:40px;font-weight:600;
+}
+.flip-card .card-btns .fl{background:#f6ad55;color:#1a202c}
+.flip-card .card-btns .se{background:var(--primary-soft);color:var(--primary)}
+.flip-card .card-btns .sz{background:var(--accent-soft);color:var(--accent)}
+@media(max-width:560px){
+  .card-grid{grid-template-columns:1fr}
+  .flip-card{min-height:220px}
+  .flip-card .inner{min-height:220px}
+}
+
+</style>
+</head>
+<body>
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <p class="school">學生自學</p>
+    <h1>英文增潤小冊子</h1>
+    <p class="subtitle">Paper 3 Vocabulary List + MTR Station Names</p>
+    <div class="tip-box">
+      <div>
+        <strong>使用提示</strong>
+        每天溫習約 5 個生字；中英對照方便記憶。本頁分為兩大部分——① 基礎詞彙；② 香港地鐵站名。
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="toolbar" role="search">
+  <div class="toolbar-inner">
+    <div class="search-wrap">
+      <span class="icon" aria-hidden="true">🔍</span>
+      <input type="search" id="globalSearch" placeholder="搜尋英文或中文……" autocomplete="off" enterkeyhint="search">
+    </div>
+    <button type="button" class="btn btn-secondary" id="toggleZh" aria-pressed="false">隱藏中文</button>
+    <a class="btn btn-secondary" href="#wordcards" id="goCards">字卡朗讀</a>
+    <a class="btn btn-accent" href="#quiz">測驗模式</a>
+  </div>
+</div>
+
+<main class="wrap">
+  <nav class="nav-panel" id="contents" aria-label="目錄">
+    <h2>目錄 Contents</h2>
+    <div class="nav-group">
+      <div class="nav-label">第一部分　基礎詞彙</div>
+      <div class="nav-chips">
+        <a href="#s1" class="nav-chip">1 月份</a>
+<a href="#s2" class="nav-chip">2 星期</a>
+<a href="#s3" class="nav-chip">3 運動</a>
+<a href="#s4" class="nav-chip">4 職業</a>
+<a href="#s5" class="nav-chip">5 計量</a>
+<a href="#s6" class="nav-chip">6 時間</a>
+<a href="#s7" class="nav-chip">7 國家</a>
+<a href="#s8" class="nav-chip">8 國籍</a>
+<a href="#s9" class="nav-chip">9 景點</a>
+<a href="#s10" class="nav-chip">10 研究</a>
+<a href="#s11" class="nav-chip">11 方向</a>
+<a href="#s12" class="nav-chip">12 幾何</a>
+<a href="#s13" class="nav-chip">13 健康</a>
+<a href="#s14" class="nav-chip">14 家居</a>
+      </div>
+    </div>
+    <div class="nav-group">
+      <div class="nav-label">第二部分　香港地鐵站名</div>
+      <div class="nav-chips">
+        <a href="#mtr-kt" class="nav-chip">觀塘線</a><a href="#mtr-tw" class="nav-chip">荃灣線</a><a href="#mtr-il" class="nav-chip">港島線</a><a href="#mtr-tko" class="nav-chip">將軍澳線</a><a href="#mtr-sil" class="nav-chip">南港島線</a><a href="#mtr-tc" class="nav-chip">東涌／迪士尼／機場</a><a href="#mtr-er" class="nav-chip">東鐵線</a><a href="#mtr-tm1" class="nav-chip">屯馬線（烏溪沙→土瓜灣）</a><a href="#mtr-tm2" class="nav-chip">屯馬線（黃埔→屯門）</a>
+      </div>
+    </div>
+    <div class="nav-group">
+      <div class="nav-label">自測</div>
+      <div class="nav-chips">
+        <a href="#wordcards" class="nav-chip quiz">🃏 字卡／Word Cards</a>
+        <a href="#quiz" class="nav-chip quiz">📝 測驗模式 Quiz</a>
+      </div>
+    </div>
+  </nav>
+
+  <div id="emptyFilter" class="empty-filter">找不到符合的詞彙，請試其他關鍵字。</div>
+
+  
+  <div class="mode-tabs" role="tablist" aria-label="學習模式">
+    <button type="button" class="mode-btn on" id="modeBrowse" data-mode="browse">📋 詞彙表</button>
+    <button type="button" class="mode-btn" id="modeCards" data-mode="cards">🃏 字卡／朗讀</button>
+    <button type="button" class="mode-btn" id="modeQuizJump" data-mode="quiz">📝 測驗</button>
+  </div>
+
+  <div id="cardsBlock" class="cards-block hidden-mode">
+    <div class="part-head" id="wordcards">
+      <h1>字卡／Word Cards</h1>
+      <span class="en">Flashcards + Pronunciation</span>
+    </div>
+    <div class="card card-panel">
+      <div class="card-tip">按卡片可翻轉，按「朗讀」可聽讀音。正面為英文，背面為中文——方便英文增潤溫習。</div>
+      <div class="vnote" id="vnote">提示：此裝置未找到中文語音，中文朗讀可能無法播放。可在系統設定安裝「中文（香港）」語音。</div>
+      <div class="card-filters" id="cardFilters" aria-label="分類篩選"></div>
+      <div class="cards-bar">
+        <input type="search" class="card-search" id="cardSearch" placeholder="搜尋中文或英文……" autocomplete="off">
+        <span class="lang-tog" id="langTog" title="中文朗讀語音">
+          <button type="button" data-l="yue" class="on">粵語</button>
+          <button type="button" data-l="cmn">普通話</button>
+        </span>
+      </div>
+      <p id="cardCount"></p>
+      <div class="card-grid" id="cardGrid"></div>
+    </div>
+  </div>
+
+
+  <div id="browseBlock" class="browse-block">
+<div class="part-head" id="part1">
+    <h1>第一部分　基礎詞彙</h1>
+    <span class="en">Part 1 Basic Vocabulary</span>
+  </div>
+
+  
+<section class="card section" id="s1" data-section="months">
+  <h2><span class="badge">1</span> 月份 Months</h2>
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="en">English</th><th class="zh">中文</th></tr></thead>
+      <tbody>
+<tr data-en="January" data-zh="一月"><td class="en">January</td><td class="zh">一月</td></tr>
+<tr data-en="February" data-zh="二月"><td class="en">February</td><td class="zh">二月</td></tr>
+<tr data-en="March" data-zh="三月"><td class="en">March</td><td class="zh">三月</td></tr>
+<tr data-en="April" data-zh="四月"><td class="en">April</td><td class="zh">四月</td></tr>
+<tr data-en="May" data-zh="五月"><td class="en">May</td><td class="zh">五月</td></tr>
+<tr data-en="June" data-zh="六月"><td class="en">June</td><td class="zh">六月</td></tr>
+<tr data-en="July" data-zh="七月"><td class="en">July</td><td class="zh">七月</td></tr>
+<tr data-en="August" data-zh="八月"><td class="en">August</td><td class="zh">八月</td></tr>
+<tr data-en="September" data-zh="九月"><td class="en">September</td><td class="zh">九月</td></tr>
+<tr data-en="October" data-zh="十月"><td class="en">October</td><td class="zh">十月</td></tr>
+<tr data-en="November" data-zh="十一月"><td class="en">November</td><td class="zh">十一月</td></tr>
+<tr data-en="December" data-zh="十二月"><td class="en">December</td><td class="zh">十二月</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>四季 Seasons</h3>
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="en">English</th><th class="zh">中文</th></tr></thead>
+      <tbody>
+<tr data-en="Spring" data-zh="春"><td class="en">Spring</td><td class="zh">春</td></tr>
+<tr data-en="Summer" data-zh="夏"><td class="en">Summer</td><td class="zh">夏</td></tr>
+<tr data-en="Autumn / Fall" data-zh="秋"><td class="en">Autumn / Fall</td><td class="zh">秋</td></tr>
+<tr data-en="Winter" data-zh="冬"><td class="en">Winter</td><td class="zh">冬</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>包含月份的常用例句 Example Sentences</h3>
+  <ol class="examples">
+<li><span class="ex-zh">會議將於 12 月 15 日舉行。</span> <span class="arrow">→</span> <span class="ex-en">The conference will take place on December 15.</span></li><li><span class="ex-zh">我在八月出生。</span> <span class="arrow">→</span> <span class="ex-en">I was born in August.</span></li><li><span class="ex-zh">我的生日是 8 月 25 號。</span> <span class="arrow">→</span> <span class="ex-en">My birthday is on August 25th.</span></li><li><span class="ex-zh">下一個公眾假期是什麼時候？7 月 4 日。</span> <span class="arrow">→</span> <span class="ex-en">When is the next public holiday? It's on July 4th.</span></li><li><span class="ex-zh">下一次團隊會議是每月第一個星期一。</span> <span class="arrow">→</span> <span class="ex-en">When is the next team meeting? It's on the first Monday of every month.</span></li>
+  </ol>
+  <h3>時間頻率 Frequency Expressions</h3>
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">中文 / 解釋</th></tr></thead>
+      <tbody>
+<tr data-en="daily" data-zh="每天"><td class="num">1</td><td class="en">daily</td><td class="zh">每天</td></tr>
+<tr data-en="weekly" data-zh="每週"><td class="num">2</td><td class="en">weekly</td><td class="zh">每週</td></tr>
+<tr data-en="monthly / once a month" data-zh="每月一次"><td class="num">3</td><td class="en">monthly / once a month</td><td class="zh">每月一次</td></tr>
+<tr data-en="seasonally" data-zh="每季"><td class="num">4</td><td class="en">seasonally</td><td class="zh">每季</td></tr>
+<tr data-en="annually / every year" data-zh="每年"><td class="num">5</td><td class="en">annually / every year</td><td class="zh">每年</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card section" id="s2">
+  <h2><span class="badge">2</span> 星期 <span class="en-title">Days of the Week</span></h2>
+
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">中文</th></tr></thead>
+      <tbody>
+<tr data-en="Sunday" data-zh="星期日"><td class="num">1</td><td class="en">Sunday</td><td class="zh">星期日</td></tr>
+<tr data-en="Monday" data-zh="星期一"><td class="num">2</td><td class="en">Monday</td><td class="zh">星期一</td></tr>
+<tr data-en="Tuesday" data-zh="星期二"><td class="num">3</td><td class="en">Tuesday</td><td class="zh">星期二</td></tr>
+<tr data-en="Wednesday" data-zh="星期三"><td class="num">4</td><td class="en">Wednesday</td><td class="zh">星期三</td></tr>
+<tr data-en="Thursday" data-zh="星期四"><td class="num">5</td><td class="en">Thursday</td><td class="zh">星期四</td></tr>
+<tr data-en="Friday" data-zh="星期五"><td class="num">6</td><td class="en">Friday</td><td class="zh">星期五</td></tr>
+<tr data-en="Saturday" data-zh="星期六"><td class="num">7</td><td class="en">Saturday</td><td class="zh">星期六</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card section" id="s3">
+  <h2><span class="badge">3</span> 運動 <span class="en-title">Sports</span></h2>
+
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">中文</th></tr></thead>
+      <tbody>
+<tr data-en="Sprint" data-zh="短跑"><td class="num">1</td><td class="en">Sprint</td><td class="zh">短跑</td></tr>
+<tr data-en="Hurdle" data-zh="跨欄"><td class="num">2</td><td class="en">Hurdle</td><td class="zh">跨欄</td></tr>
+<tr data-en="Hockey" data-zh="曲棍球"><td class="num">3</td><td class="en">Hockey</td><td class="zh">曲棍球</td></tr>
+<tr data-en="Baseball" data-zh="棒球"><td class="num">4</td><td class="en">Baseball</td><td class="zh">棒球</td></tr>
+<tr data-en="Marathon" data-zh="馬拉松"><td class="num">5</td><td class="en">Marathon</td><td class="zh">馬拉松</td></tr>
+<tr data-en="Javelin Throw" data-zh="標槍"><td class="num">6</td><td class="en">Javelin Throw</td><td class="zh">標槍</td></tr>
+<tr data-en="Kendo" data-zh="劍道"><td class="num">7</td><td class="en">Kendo</td><td class="zh">劍道</td></tr>
+<tr data-en="Archery" data-zh="射箭"><td class="num">8</td><td class="en">Archery</td><td class="zh">射箭</td></tr>
+<tr data-en="Gymnastics" data-zh="體操"><td class="num">9</td><td class="en">Gymnastics</td><td class="zh">體操</td></tr>
+<tr data-en="Aerobics" data-zh="有氧運動"><td class="num">10</td><td class="en">Aerobics</td><td class="zh">有氧運動</td></tr>
+<tr data-en="Martial arts" data-zh="武術"><td class="num">11</td><td class="en">Martial arts</td><td class="zh">武術</td></tr>
+<tr data-en="Boxing" data-zh="拳擊"><td class="num">12</td><td class="en">Boxing</td><td class="zh">拳擊</td></tr>
+<tr data-en="Karate" data-zh="空手道"><td class="num">13</td><td class="en">Karate</td><td class="zh">空手道</td></tr>
+<tr data-en="Judo" data-zh="柔道"><td class="num">14</td><td class="en">Judo</td><td class="zh">柔道</td></tr>
+<tr data-en="Relay" data-zh="接力"><td class="num">15</td><td class="en">Relay</td><td class="zh">接力</td></tr>
+<tr data-en="Tai Chi" data-zh="太極"><td class="num">16</td><td class="en">Tai Chi</td><td class="zh">太極</td></tr>
+<tr data-en="Weight Lifting" data-zh="舉重"><td class="num">17</td><td class="en">Weight Lifting</td><td class="zh">舉重</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card section" id="s4">
+  <h2><span class="badge">4</span> 職業 <span class="en-title">Jobs / Occupations</span></h2>
+
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">中文</th></tr></thead>
+      <tbody>
+<tr data-en="Accountant" data-zh="會計師"><td class="num">1</td><td class="en">Accountant</td><td class="zh">會計師</td></tr>
+<tr data-en="Adviser / Advisor" data-zh="顧問"><td class="num">2</td><td class="en">Adviser / Advisor</td><td class="zh">顧問</td></tr>
+<tr data-en="Artist" data-zh="藝術家"><td class="num">3</td><td class="en">Artist</td><td class="zh">藝術家</td></tr>
+<tr data-en="Celebrity" data-zh="名人"><td class="num">4</td><td class="en">Celebrity</td><td class="zh">名人</td></tr>
+<tr data-en="Chemist" data-zh="化學家"><td class="num">5</td><td class="en">Chemist</td><td class="zh">化學家</td></tr>
+<tr data-en="Dietician" data-zh="營養師"><td class="num">6</td><td class="en">Dietician</td><td class="zh">營養師</td></tr>
+<tr data-en="Real estate agent" data-zh="房地產經紀人"><td class="num">7</td><td class="en">Real estate agent</td><td class="zh">房地產經紀人</td></tr>
+<tr data-en="Politician" data-zh="政治家"><td class="num">8</td><td class="en">Politician</td><td class="zh">政治家</td></tr>
+<tr data-en="Entrepreneur" data-zh="企業家"><td class="num">9</td><td class="en">Entrepreneur</td><td class="zh">企業家</td></tr>
+<tr data-en="Hairstylist" data-zh="髮型師"><td class="num">10</td><td class="en">Hairstylist</td><td class="zh">髮型師</td></tr>
+<tr data-en="Barrister" data-zh="大律師"><td class="num">11</td><td class="en">Barrister</td><td class="zh">大律師</td></tr>
+<tr data-en="Attorney / Lawyer" data-zh="律師"><td class="num">12</td><td class="en">Attorney / Lawyer</td><td class="zh">律師</td></tr>
+<tr data-en="Auditor" data-zh="審計師"><td class="num">13</td><td class="en">Auditor</td><td class="zh">審計師</td></tr>
+<tr data-en="Practitioner" data-zh="從業者"><td class="num">14</td><td class="en">Practitioner</td><td class="zh">從業者</td></tr>
+<tr data-en="Pharmacist" data-zh="藥劑師"><td class="num">15</td><td class="en">Pharmacist</td><td class="zh">藥劑師</td></tr>
+<tr data-en="Architect" data-zh="建築師"><td class="num">16</td><td class="en">Architect</td><td class="zh">建築師</td></tr>
+<tr data-en="Pilot" data-zh="飛行員"><td class="num">17</td><td class="en">Pilot</td><td class="zh">飛行員</td></tr>
+<tr data-en="Hawker" data-zh="小販"><td class="num">18</td><td class="en">Hawker</td><td class="zh">小販</td></tr>
+<tr data-en="Librarian" data-zh="圖書管理員"><td class="num">19</td><td class="en">Librarian</td><td class="zh">圖書管理員</td></tr>
+<tr data-en="Photographer" data-zh="攝影師"><td class="num">20</td><td class="en">Photographer</td><td class="zh">攝影師</td></tr>
+<tr data-en="Consultant" data-zh="顧問"><td class="num">21</td><td class="en">Consultant</td><td class="zh">顧問</td></tr>
+<tr data-en="Salesperson" data-zh="銷售員"><td class="num">22</td><td class="en">Salesperson</td><td class="zh">銷售員</td></tr>
+<tr data-en="Bodyguard" data-zh="保鏢"><td class="num">23</td><td class="en">Bodyguard</td><td class="zh">保鏢</td></tr>
+<tr data-en="Calligrapher" data-zh="書法家"><td class="num">24</td><td class="en">Calligrapher</td><td class="zh">書法家</td></tr>
+<tr data-en="Composer" data-zh="作曲家"><td class="num">25</td><td class="en">Composer</td><td class="zh">作曲家</td></tr>
+<tr data-en="Clerk" data-zh="文員"><td class="num">26</td><td class="en">Clerk</td><td class="zh">文員</td></tr>
+<tr data-en="Computer engineer" data-zh="電腦工程師"><td class="num">27</td><td class="en">Computer engineer</td><td class="zh">電腦工程師</td></tr>
+<tr data-en="Programmer" data-zh="程序員"><td class="num">28</td><td class="en">Programmer</td><td class="zh">程序員</td></tr>
+<tr data-en="Editor" data-zh="編輯"><td class="num">29</td><td class="en">Editor</td><td class="zh">編輯</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card section" id="s5">
+  <h2><span class="badge">5</span> 計量與數量 <span class="en-title">Measurement &amp; Quantity</span></h2>
+
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">中文</th></tr></thead>
+      <tbody>
+<tr data-en="each / every" data-zh="每個"><td class="num">1</td><td class="en">each / every</td><td class="zh">每個</td></tr>
+<tr data-en="most / a majority of" data-zh="大部份"><td class="num">2</td><td class="en">most / a majority of</td><td class="zh">大部份</td></tr>
+<tr data-en="a lot of / many / much" data-zh="很多"><td class="num">3</td><td class="en">a lot of / many / much</td><td class="zh">很多</td></tr>
+<tr data-en="different kinds of / various" data-zh="不同種類"><td class="num">4</td><td class="en">different kinds of / various</td><td class="zh">不同種類</td></tr>
+<tr data-en="some / a few / a little" data-zh="有些"><td class="num">5</td><td class="en">some / a few / a little</td><td class="zh">有些</td></tr>
+<tr data-en="a minority" data-zh="小部分"><td class="num">6</td><td class="en">a minority</td><td class="zh">小部分</td></tr>
+<tr data-en="few / little" data-zh="少"><td class="num">7</td><td class="en">few / little</td><td class="zh">少</td></tr>
+<tr data-en="no / none" data-zh="沒有"><td class="num">8</td><td class="en">no / none</td><td class="zh">沒有</td></tr>
+<tr data-en="millions of" data-zh="數以百萬計"><td class="num">9</td><td class="en">millions of</td><td class="zh">數以百萬計</td></tr>
+<tr data-en="thousands of" data-zh="數以千計"><td class="num">10</td><td class="en">thousands of</td><td class="zh">數以千計</td></tr>
+<tr data-en="hundreds of" data-zh="數以百計"><td class="num">11</td><td class="en">hundreds of</td><td class="zh">數以百計</td></tr>
+<tr data-en="triple / 3 times" data-zh="3 倍"><td class="num">12</td><td class="en">triple / 3 times</td><td class="zh">3 倍</td></tr>
+<tr data-en="double" data-zh="2 倍"><td class="num">13</td><td class="en">double</td><td class="zh">2 倍</td></tr>
+<tr data-en="a couple of / a pair of" data-zh="兩個 / 一對"><td class="num">14</td><td class="en">a couple of / a pair of</td><td class="zh">兩個 / 一對</td></tr>
+<tr data-en="three quarters" data-zh="四分之三"><td class="num">15</td><td class="en">three quarters</td><td class="zh">四分之三</td></tr>
+<tr data-en="half" data-zh="一半"><td class="num">16</td><td class="en">half</td><td class="zh">一半</td></tr>
+<tr data-en="one-third" data-zh="三分之一"><td class="num">17</td><td class="en">one-third</td><td class="zh">三分之一</td></tr>
+<tr data-en="a quarter" data-zh="四分之一"><td class="num">18</td><td class="en">a quarter</td><td class="zh">四分之一</td></tr>
+<tr data-en="one-fifth" data-zh="五分之一"><td class="num">19</td><td class="en">one-fifth</td><td class="zh">五分之一</td></tr>
+<tr data-en="percent (%)" data-zh="百分比"><td class="num">20</td><td class="en">percent (%)</td><td class="zh">百分比</td></tr>
+<tr data-en="more than / over" data-zh="超過"><td class="num">21</td><td class="en">more than / over</td><td class="zh">超過</td></tr>
+<tr data-en="both" data-zh="兩者皆是"><td class="num">22</td><td class="en">both</td><td class="zh">兩者皆是</td></tr>
+<tr data-en="another" data-zh="另一"><td class="num">23</td><td class="en">another</td><td class="zh">另一</td></tr>
+<tr data-en="other" data-zh="其他"><td class="num">24</td><td class="en">other</td><td class="zh">其他</td></tr>
+<tr data-en="once" data-zh="一次"><td class="num">25</td><td class="en">once</td><td class="zh">一次</td></tr>
+<tr data-en="twice" data-zh="兩次"><td class="num">26</td><td class="en">twice</td><td class="zh">兩次</td></tr>
+<tr data-en="three times" data-zh="三次"><td class="num">27</td><td class="en">three times</td><td class="zh">三次</td></tr>
+<tr data-en="approximately / about" data-zh="大約"><td class="num">28</td><td class="en">approximately / about</td><td class="zh">大約</td></tr>
+<tr data-en="nearly / almost" data-zh="差不多"><td class="num">29</td><td class="en">nearly / almost</td><td class="zh">差不多</td></tr>
+<tr data-en="exactly" data-zh="正是"><td class="num">30</td><td class="en">exactly</td><td class="zh">正是</td></tr>
+<tr data-en="less / fewer" data-zh="較少"><td class="num">31</td><td class="en">less / fewer</td><td class="zh">較少</td></tr>
+<tr data-en="maximum" data-zh="最大"><td class="num">32</td><td class="en">maximum</td><td class="zh">最大</td></tr>
+<tr data-en="minimum" data-zh="最小"><td class="num">33</td><td class="en">minimum</td><td class="zh">最小</td></tr>
+<tr data-en="sole / unique" data-zh="唯一 / 獨一無二"><td class="num">34</td><td class="en">sole / unique</td><td class="zh">唯一 / 獨一無二</td></tr>
+<tr data-en="increase / rise / go up" data-zh="增加"><td class="num">35</td><td class="en">increase / rise / go up</td><td class="zh">增加</td></tr>
+<tr data-en="decrease / drop / reduce" data-zh="減少"><td class="num">36</td><td class="en">decrease / drop / reduce</td><td class="zh">減少</td></tr>
+<tr data-en="kilometres (km)" data-zh="公里"><td class="num">37</td><td class="en">kilometres (km)</td><td class="zh">公里</td></tr>
+<tr data-en="metres (m)" data-zh="米"><td class="num">38</td><td class="en">metres (m)</td><td class="zh">米</td></tr>
+<tr data-en="centimetres (cm)" data-zh="厘米"><td class="num">39</td><td class="en">centimetres (cm)</td><td class="zh">厘米</td></tr>
+<tr data-en="kilograms (kg)" data-zh="公斤"><td class="num">40</td><td class="en">kilograms (kg)</td><td class="zh">公斤</td></tr>
+<tr data-en="grams (g)" data-zh="克"><td class="num">41</td><td class="en">grams (g)</td><td class="zh">克</td></tr>
+<tr data-en="average" data-zh="平均"><td class="num">42</td><td class="en">average</td><td class="zh">平均</td></tr>
+<tr data-en="total" data-zh="總共"><td class="num">43</td><td class="en">total</td><td class="zh">總共</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card section" id="s6">
+  <h2><span class="badge">6</span> 時間 <span class="en-title">Time</span></h2>
+
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">中文</th></tr></thead>
+      <tbody>
+<tr data-en="seconds (s)" data-zh="秒"><td class="num">1</td><td class="en">seconds (s)</td><td class="zh">秒</td></tr>
+<tr data-en="minutes (min)" data-zh="分鐘"><td class="num">2</td><td class="en">minutes (min)</td><td class="zh">分鐘</td></tr>
+<tr data-en="hours (h)" data-zh="小時"><td class="num">3</td><td class="en">hours (h)</td><td class="zh">小時</td></tr>
+<tr data-en="days" data-zh="日"><td class="num">4</td><td class="en">days</td><td class="zh">日</td></tr>
+<tr data-en="date" data-zh="日期"><td class="num">5</td><td class="en">date</td><td class="zh">日期</td></tr>
+<tr data-en="weekdays" data-zh="平日"><td class="num">6</td><td class="en">weekdays</td><td class="zh">平日</td></tr>
+<tr data-en="weeks" data-zh="星期"><td class="num">7</td><td class="en">weeks</td><td class="zh">星期</td></tr>
+<tr data-en="weekends" data-zh="周末"><td class="num">8</td><td class="en">weekends</td><td class="zh">周末</td></tr>
+<tr data-en="month" data-zh="月"><td class="num">9</td><td class="en">month</td><td class="zh">月</td></tr>
+<tr data-en="year" data-zh="年"><td class="num">10</td><td class="en">year</td><td class="zh">年</td></tr>
+<tr data-en="annually" data-zh="每年"><td class="num">11</td><td class="en">annually</td><td class="zh">每年</td></tr>
+<tr data-en="decade" data-zh="十年"><td class="num">12</td><td class="en">decade</td><td class="zh">十年</td></tr>
+<tr data-en="century" data-zh="世紀"><td class="num">13</td><td class="en">century</td><td class="zh">世紀</td></tr>
+<tr data-en="previous / last" data-zh="之前的 / 上一個"><td class="num">14</td><td class="en">previous / last</td><td class="zh">之前的 / 上一個</td></tr>
+<tr data-en="next / following" data-zh="下一個 / 接著的"><td class="num">15</td><td class="en">next / following</td><td class="zh">下一個 / 接著的</td></tr>
+<tr data-en="yesterday" data-zh="昨天"><td class="num">16</td><td class="en">yesterday</td><td class="zh">昨天</td></tr>
+<tr data-en="today" data-zh="今天"><td class="num">17</td><td class="en">today</td><td class="zh">今天</td></tr>
+<tr data-en="tomorrow" data-zh="明天"><td class="num">18</td><td class="en">tomorrow</td><td class="zh">明天</td></tr>
+<tr data-en="ago" data-zh="以前"><td class="num">19</td><td class="en">ago</td><td class="zh">以前</td></tr>
+<tr data-en="ancient" data-zh="古代的"><td class="num">20</td><td class="en">ancient</td><td class="zh">古代的</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card section" id="s7">
+  <h2><span class="badge">7</span> 國家與城市 <span class="en-title">Countries &amp; Cities</span></h2>
+
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">中文</th></tr></thead>
+      <tbody>
+<tr data-en="China" data-zh="中國"><td class="num">1</td><td class="en">China</td><td class="zh">中國</td></tr>
+<tr data-en="Beijing" data-zh="北京"><td class="num">2</td><td class="en">Beijing</td><td class="zh">北京</td></tr>
+<tr data-en="Shanghai" data-zh="上海"><td class="num">3</td><td class="en">Shanghai</td><td class="zh">上海</td></tr>
+<tr data-en="Shenzhen" data-zh="深圳"><td class="num">4</td><td class="en">Shenzhen</td><td class="zh">深圳</td></tr>
+<tr data-en="Guangzhou" data-zh="廣州"><td class="num">5</td><td class="en">Guangzhou</td><td class="zh">廣州</td></tr>
+<tr data-en="Canada" data-zh="加拿大"><td class="num">6</td><td class="en">Canada</td><td class="zh">加拿大</td></tr>
+<tr data-en="Toronto" data-zh="多倫多"><td class="num">7</td><td class="en">Toronto</td><td class="zh">多倫多</td></tr>
+<tr data-en="Vancouver" data-zh="溫哥華"><td class="num">8</td><td class="en">Vancouver</td><td class="zh">溫哥華</td></tr>
+<tr data-en="Australia" data-zh="澳洲"><td class="num">9</td><td class="en">Australia</td><td class="zh">澳洲</td></tr>
+<tr data-en="Sydney" data-zh="悉尼"><td class="num">10</td><td class="en">Sydney</td><td class="zh">悉尼</td></tr>
+<tr data-en="Melbourne" data-zh="墨爾本"><td class="num">11</td><td class="en">Melbourne</td><td class="zh">墨爾本</td></tr>
+<tr data-en="The USA" data-zh="美國"><td class="num">12</td><td class="en">The USA</td><td class="zh">美國</td></tr>
+<tr data-en="New York" data-zh="紐約"><td class="num">13</td><td class="en">New York</td><td class="zh">紐約</td></tr>
+<tr data-en="Los Angeles" data-zh="洛杉磯"><td class="num">14</td><td class="en">Los Angeles</td><td class="zh">洛杉磯</td></tr>
+<tr data-en="California" data-zh="加州"><td class="num">15</td><td class="en">California</td><td class="zh">加州</td></tr>
+<tr data-en="Thailand" data-zh="泰國"><td class="num">16</td><td class="en">Thailand</td><td class="zh">泰國</td></tr>
+<tr data-en="Bangkok" data-zh="曼谷"><td class="num">17</td><td class="en">Bangkok</td><td class="zh">曼谷</td></tr>
+<tr data-en="Malaysia" data-zh="馬來西亞"><td class="num">18</td><td class="en">Malaysia</td><td class="zh">馬來西亞</td></tr>
+<tr data-en="Kuala Lumpur" data-zh="吉隆坡"><td class="num">19</td><td class="en">Kuala Lumpur</td><td class="zh">吉隆坡</td></tr>
+<tr data-en="Philippines" data-zh="菲律賓"><td class="num">20</td><td class="en">Philippines</td><td class="zh">菲律賓</td></tr>
+<tr data-en="Singapore" data-zh="新加坡"><td class="num">21</td><td class="en">Singapore</td><td class="zh">新加坡</td></tr>
+<tr data-en="Korea" data-zh="韓國"><td class="num">22</td><td class="en">Korea</td><td class="zh">韓國</td></tr>
+<tr data-en="Seoul" data-zh="首爾"><td class="num">23</td><td class="en">Seoul</td><td class="zh">首爾</td></tr>
+<tr data-en="Japan" data-zh="日本"><td class="num">24</td><td class="en">Japan</td><td class="zh">日本</td></tr>
+<tr data-en="Tokyo" data-zh="東京"><td class="num">25</td><td class="en">Tokyo</td><td class="zh">東京</td></tr>
+<tr data-en="Osaka" data-zh="大阪"><td class="num">26</td><td class="en">Osaka</td><td class="zh">大阪</td></tr>
+<tr data-en="Taiwan" data-zh="台灣"><td class="num">27</td><td class="en">Taiwan</td><td class="zh">台灣</td></tr>
+<tr data-en="Italy" data-zh="意大利"><td class="num">28</td><td class="en">Italy</td><td class="zh">意大利</td></tr>
+<tr data-en="Rome" data-zh="羅馬"><td class="num">29</td><td class="en">Rome</td><td class="zh">羅馬</td></tr>
+<tr data-en="France" data-zh="法國"><td class="num">30</td><td class="en">France</td><td class="zh">法國</td></tr>
+<tr data-en="Paris" data-zh="巴黎"><td class="num">31</td><td class="en">Paris</td><td class="zh">巴黎</td></tr>
+<tr data-en="Germany" data-zh="德國"><td class="num">32</td><td class="en">Germany</td><td class="zh">德國</td></tr>
+<tr data-en="Berlin" data-zh="柏林"><td class="num">33</td><td class="en">Berlin</td><td class="zh">柏林</td></tr>
+<tr data-en="Britain / UK" data-zh="英國"><td class="num">34</td><td class="en">Britain / UK</td><td class="zh">英國</td></tr>
+<tr data-en="London" data-zh="倫敦"><td class="num">35</td><td class="en">London</td><td class="zh">倫敦</td></tr>
+<tr data-en="Spain" data-zh="西班牙"><td class="num">36</td><td class="en">Spain</td><td class="zh">西班牙</td></tr>
+<tr data-en="Russia" data-zh="俄羅斯"><td class="num">37</td><td class="en">Russia</td><td class="zh">俄羅斯</td></tr>
+<tr data-en="Brazil" data-zh="巴西"><td class="num">38</td><td class="en">Brazil</td><td class="zh">巴西</td></tr>
+<tr data-en="New Zealand" data-zh="紐西蘭"><td class="num">39</td><td class="en">New Zealand</td><td class="zh">紐西蘭</td></tr>
+<tr data-en="Austria" data-zh="奧地利"><td class="num">40</td><td class="en">Austria</td><td class="zh">奧地利</td></tr>
+<tr data-en="Switzerland" data-zh="瑞士"><td class="num">41</td><td class="en">Switzerland</td><td class="zh">瑞士</td></tr>
+<tr data-en="Asia" data-zh="亞洲"><td class="num">42</td><td class="en">Asia</td><td class="zh">亞洲</td></tr>
+<tr data-en="Europe" data-zh="歐洲"><td class="num">43</td><td class="en">Europe</td><td class="zh">歐洲</td></tr>
+<tr data-en="Africa" data-zh="非洲"><td class="num">44</td><td class="en">Africa</td><td class="zh">非洲</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card section" id="s8">
+  <h2><span class="badge">8</span> 國籍 <span class="en-title">Nationality</span></h2>
+
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">中文</th></tr></thead>
+      <tbody>
+<tr data-en="Chinese" data-zh="中國籍"><td class="num">1</td><td class="en">Chinese</td><td class="zh">中國籍</td></tr>
+<tr data-en="American" data-zh="美籍"><td class="num">2</td><td class="en">American</td><td class="zh">美籍</td></tr>
+<tr data-en="British" data-zh="英國籍"><td class="num">3</td><td class="en">British</td><td class="zh">英國籍</td></tr>
+<tr data-en="Canadian" data-zh="加拿大籍"><td class="num">4</td><td class="en">Canadian</td><td class="zh">加拿大籍</td></tr>
+<tr data-en="Australian" data-zh="澳洲籍"><td class="num">5</td><td class="en">Australian</td><td class="zh">澳洲籍</td></tr>
+<tr data-en="Japanese" data-zh="日本籍"><td class="num">6</td><td class="en">Japanese</td><td class="zh">日本籍</td></tr>
+<tr data-en="Korean" data-zh="韓國籍"><td class="num">7</td><td class="en">Korean</td><td class="zh">韓國籍</td></tr>
+<tr data-en="French" data-zh="法國籍"><td class="num">8</td><td class="en">French</td><td class="zh">法國籍</td></tr>
+<tr data-en="German" data-zh="德國籍"><td class="num">9</td><td class="en">German</td><td class="zh">德國籍</td></tr>
+<tr data-en="Italian" data-zh="意大利籍"><td class="num">10</td><td class="en">Italian</td><td class="zh">意大利籍</td></tr>
+<tr data-en="Spanish" data-zh="西班牙籍"><td class="num">11</td><td class="en">Spanish</td><td class="zh">西班牙籍</td></tr>
+<tr data-en="Thai" data-zh="泰國籍"><td class="num">12</td><td class="en">Thai</td><td class="zh">泰國籍</td></tr>
+<tr data-en="Malaysian" data-zh="馬來西亞籍"><td class="num">13</td><td class="en">Malaysian</td><td class="zh">馬來西亞籍</td></tr>
+<tr data-en="Singaporean" data-zh="新加坡籍"><td class="num">14</td><td class="en">Singaporean</td><td class="zh">新加坡籍</td></tr>
+<tr data-en="Filipino" data-zh="菲律賓籍"><td class="num">15</td><td class="en">Filipino</td><td class="zh">菲律賓籍</td></tr>
+<tr data-en="Taiwanese" data-zh="台灣籍"><td class="num">16</td><td class="en">Taiwanese</td><td class="zh">台灣籍</td></tr>
+<tr data-en="Indian" data-zh="印度籍"><td class="num">17</td><td class="en">Indian</td><td class="zh">印度籍</td></tr>
+<tr data-en="Russian" data-zh="俄羅斯籍"><td class="num">18</td><td class="en">Russian</td><td class="zh">俄羅斯籍</td></tr>
+<tr data-en="Brazilian" data-zh="巴西籍"><td class="num">19</td><td class="en">Brazilian</td><td class="zh">巴西籍</td></tr>
+<tr data-en="Swiss" data-zh="瑞士籍"><td class="num">20</td><td class="en">Swiss</td><td class="zh">瑞士籍</td></tr>
+<tr data-en="Austrian" data-zh="奧地利籍"><td class="num">21</td><td class="en">Austrian</td><td class="zh">奧地利籍</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card section" id="s9">
+  <h2><span class="badge">9</span> 香港旅遊景點 <span class="en-title">HK Tourist Destinations</span></h2>
+
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">中文</th></tr></thead>
+      <tbody>
+<tr data-en="The Peak" data-zh="山頂"><td class="num">1</td><td class="en">The Peak</td><td class="zh">山頂</td></tr>
+<tr data-en="Ocean Park" data-zh="海洋公園"><td class="num">2</td><td class="en">Ocean Park</td><td class="zh">海洋公園</td></tr>
+<tr data-en="Disneyland" data-zh="迪士尼"><td class="num">3</td><td class="en">Disneyland</td><td class="zh">迪士尼</td></tr>
+<tr data-en="Avenue of Stars" data-zh="星光大道"><td class="num">4</td><td class="en">Avenue of Stars</td><td class="zh">星光大道</td></tr>
+<tr data-en="Golden Bauhinia Square" data-zh="金紫荊廣場"><td class="num">5</td><td class="en">Golden Bauhinia Square</td><td class="zh">金紫荊廣場</td></tr>
+<tr data-en="Big Buddha" data-zh="天壇大佛"><td class="num">6</td><td class="en">Big Buddha</td><td class="zh">天壇大佛</td></tr>
+<tr data-en="Po Lin Monastery" data-zh="寶蓮寺"><td class="num">7</td><td class="en">Po Lin Monastery</td><td class="zh">寶蓮寺</td></tr>
+<tr data-en="Repulse Bay" data-zh="淺水灣"><td class="num">8</td><td class="en">Repulse Bay</td><td class="zh">淺水灣</td></tr>
+<tr data-en="Temple Street" data-zh="廟街"><td class="num">9</td><td class="en">Temple Street</td><td class="zh">廟街</td></tr>
+<tr data-en="Lan Kwai Fong" data-zh="蘭桂坊"><td class="num">10</td><td class="en">Lan Kwai Fong</td><td class="zh">蘭桂坊</td></tr>
+<tr data-en="Times Square" data-zh="時代廣場"><td class="num">11</td><td class="en">Times Square</td><td class="zh">時代廣場</td></tr>
+<tr data-en="Star Ferry Pier" data-zh="天星碼頭"><td class="num">12</td><td class="en">Star Ferry Pier</td><td class="zh">天星碼頭</td></tr>
+<tr data-en="Tsing Ma Bridge" data-zh="青馬大橋"><td class="num">13</td><td class="en">Tsing Ma Bridge</td><td class="zh">青馬大橋</td></tr>
+<tr data-en="Hong Kong Coliseum" data-zh="紅館"><td class="num">14</td><td class="en">Hong Kong Coliseum</td><td class="zh">紅館</td></tr>
+<tr data-en="Victoria Park" data-zh="維多利亞公園"><td class="num">15</td><td class="en">Victoria Park</td><td class="zh">維多利亞公園</td></tr>
+<tr data-en="Science Museum" data-zh="科學館"><td class="num">16</td><td class="en">Science Museum</td><td class="zh">科學館</td></tr>
+<tr data-en="Space Museum" data-zh="太空館"><td class="num">17</td><td class="en">Space Museum</td><td class="zh">太空館</td></tr>
+<tr data-en="Hong Kong Cultural Centre" data-zh="香港文化中心"><td class="num">18</td><td class="en">Hong Kong Cultural Centre</td><td class="zh">香港文化中心</td></tr>
+<tr data-en="Chek Lap Kok Airport" data-zh="赤鱲角機場"><td class="num">19</td><td class="en">Chek Lap Kok Airport</td><td class="zh">赤鱲角機場</td></tr>
+<tr data-en="Ladies' Street" data-zh="女人街"><td class="num">20</td><td class="en">Ladies' Street</td><td class="zh">女人街</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card section" id="s10">
+  <h2><span class="badge">10</span> 研究與報告 <span class="en-title">Research &amp; Presentation</span></h2>
+
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">中文</th></tr></thead>
+      <tbody>
+<tr data-en="research" data-zh="研究"><td class="num">1</td><td class="en">research</td><td class="zh">研究</td></tr>
+<tr data-en="survey" data-zh="調查"><td class="num">2</td><td class="en">survey</td><td class="zh">調查</td></tr>
+<tr data-en="questionnaire" data-zh="問卷"><td class="num">3</td><td class="en">questionnaire</td><td class="zh">問卷</td></tr>
+<tr data-en="interview" data-zh="訪問"><td class="num">4</td><td class="en">interview</td><td class="zh">訪問</td></tr>
+<tr data-en="case study" data-zh="個案研究"><td class="num">5</td><td class="en">case study</td><td class="zh">個案研究</td></tr>
+<tr data-en="project" data-zh="專題研習"><td class="num">6</td><td class="en">project</td><td class="zh">專題研習</td></tr>
+<tr data-en="presentation" data-zh="報告 / 簡報"><td class="num">7</td><td class="en">presentation</td><td class="zh">報告 / 簡報</td></tr>
+<tr data-en="PowerPoint slides" data-zh="投影片"><td class="num">8</td><td class="en">PowerPoint slides</td><td class="zh">投影片</td></tr>
+<tr data-en="charts and tables" data-zh="圖表"><td class="num">9</td><td class="en">charts and tables</td><td class="zh">圖表</td></tr>
+<tr data-en="library" data-zh="圖書館"><td class="num">10</td><td class="en">library</td><td class="zh">圖書館</td></tr>
+<tr data-en="the Internet / online" data-zh="互聯網 / 網上"><td class="num">11</td><td class="en">the Internet / online</td><td class="zh">互聯網 / 網上</td></tr>
+<tr data-en="newspaper articles" data-zh="報紙文章"><td class="num">12</td><td class="en">newspaper articles</td><td class="zh">報紙文章</td></tr>
+<tr data-en="document" data-zh="文件"><td class="num">13</td><td class="en">document</td><td class="zh">文件</td></tr>
+<tr data-en="video clips" data-zh="影片"><td class="num">14</td><td class="en">video clips</td><td class="zh">影片</td></tr>
+<tr data-en="digital photos" data-zh="數碼相片"><td class="num">15</td><td class="en">digital photos</td><td class="zh">數碼相片</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card section" id="s11">
+  <h2><span class="badge">11</span> 方向 <span class="en-title">Direction</span></h2>
+
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">中文</th></tr></thead>
+      <tbody>
+<tr data-en="left / right" data-zh="左 / 右"><td class="num">1</td><td class="en">left / right</td><td class="zh">左 / 右</td></tr>
+<tr data-en="top left / top right" data-zh="左上角 / 右上角"><td class="num">2</td><td class="en">top left / top right</td><td class="zh">左上角 / 右上角</td></tr>
+<tr data-en="bottom left / bottom right" data-zh="左下角 / 右下角"><td class="num">3</td><td class="en">bottom left / bottom right</td><td class="zh">左下角 / 右下角</td></tr>
+<tr data-en="row / column" data-zh="橫行 / 直行"><td class="num">4</td><td class="en">row / column</td><td class="zh">橫行 / 直行</td></tr>
+<tr data-en="east / south / west / north" data-zh="東 / 南 / 西 / 北"><td class="num">5</td><td class="en">east / south / west / north</td><td class="zh">東 / 南 / 西 / 北</td></tr>
+<tr data-en="northeast / southeast" data-zh="東北 / 東南"><td class="num">6</td><td class="en">northeast / southeast</td><td class="zh">東北 / 東南</td></tr>
+<tr data-en="southwest / northwest" data-zh="西南 / 西北"><td class="num">7</td><td class="en">southwest / northwest</td><td class="zh">西南 / 西北</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card section" id="s12">
+  <h2><span class="badge">12</span> 幾何與形狀 <span class="en-title">Geometry &amp; Shapes</span></h2>
+
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">中文</th></tr></thead>
+      <tbody>
+<tr data-en="triangle" data-zh="三角形"><td class="num">1</td><td class="en">triangle</td><td class="zh">三角形</td></tr>
+<tr data-en="square" data-zh="正方形"><td class="num">2</td><td class="en">square</td><td class="zh">正方形</td></tr>
+<tr data-en="rectangle" data-zh="長方形"><td class="num">3</td><td class="en">rectangle</td><td class="zh">長方形</td></tr>
+<tr data-en="circle / round" data-zh="圓形"><td class="num">4</td><td class="en">circle / round</td><td class="zh">圓形</td></tr>
+<tr data-en="oval" data-zh="鵝蛋形"><td class="num">5</td><td class="en">oval</td><td class="zh">鵝蛋形</td></tr>
+<tr data-en="star" data-zh="星形"><td class="num">6</td><td class="en">star</td><td class="zh">星形</td></tr>
+<tr data-en="heart" data-zh="心形"><td class="num">7</td><td class="en">heart</td><td class="zh">心形</td></tr>
+<tr data-en="diamond" data-zh="菱形"><td class="num">8</td><td class="en">diamond</td><td class="zh">菱形</td></tr>
+<tr data-en="sphere" data-zh="球體"><td class="num">9</td><td class="en">sphere</td><td class="zh">球體</td></tr>
+<tr data-en="cylinder" data-zh="圓柱形"><td class="num">10</td><td class="en">cylinder</td><td class="zh">圓柱形</td></tr>
+<tr data-en="cone" data-zh="圓錐形"><td class="num">11</td><td class="en">cone</td><td class="zh">圓錐形</td></tr>
+<tr data-en="cube" data-zh="方體"><td class="num">12</td><td class="en">cube</td><td class="zh">方體</td></tr>
+<tr data-en="straight / curved / wavy line" data-zh="直線 / 曲線 / 波浪線"><td class="num">13</td><td class="en">straight / curved / wavy line</td><td class="zh">直線 / 曲線 / 波浪線</td></tr>
+<tr data-en="dotted / broken line" data-zh="點線 / 虛線"><td class="num">14</td><td class="en">dotted / broken line</td><td class="zh">點線 / 虛線</td></tr>
+<tr data-en="arrow" data-zh="箭咀"><td class="num">15</td><td class="en">arrow</td><td class="zh">箭咀</td></tr>
+<tr data-en="tick / check" data-zh="剔號"><td class="num">16</td><td class="en">tick / check</td><td class="zh">剔號</td></tr>
+<tr data-en="cross" data-zh="交叉"><td class="num">17</td><td class="en">cross</td><td class="zh">交叉</td></tr>
+<tr data-en="question mark" data-zh="問號"><td class="num">18</td><td class="en">question mark</td><td class="zh">問號</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card section" id="s13">
+  <h2><span class="badge">13</span> 健康 <span class="en-title">Health</span></h2>
+
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">詞性 / 中文</th></tr></thead>
+      <tbody>
+<tr data-en="Pharmacy" data-zh="n. 藥房"><td class="num">1</td><td class="en">Pharmacy</td><td class="zh">n. 藥房</td></tr>
+<tr data-en="Pharmacist" data-zh="n. 藥劑師"><td class="num">2</td><td class="en">Pharmacist</td><td class="zh">n. 藥劑師</td></tr>
+<tr data-en="First aid" data-zh="phr. 急救"><td class="num">3</td><td class="en">First aid</td><td class="zh">phr. 急救</td></tr>
+<tr data-en="Prescription" data-zh="n. 處方"><td class="num">4</td><td class="en">Prescription</td><td class="zh">n. 處方</td></tr>
+<tr data-en="Injection" data-zh="n. 注射"><td class="num">5</td><td class="en">Injection</td><td class="zh">n. 注射</td></tr>
+<tr data-en="Side effect" data-zh="phr. 副作用"><td class="num">6</td><td class="en">Side effect</td><td class="zh">phr. 副作用</td></tr>
+<tr data-en="Vaccine / Vaccination" data-zh="n. 疫苗 / 接種"><td class="num">7</td><td class="en">Vaccine / Vaccination</td><td class="zh">n. 疫苗 / 接種</td></tr>
+<tr data-en="Antibiotics" data-zh="n. 抗生素"><td class="num">8</td><td class="en">Antibiotics</td><td class="zh">n. 抗生素</td></tr>
+<tr data-en="Infection" data-zh="n. 感染"><td class="num">9</td><td class="en">Infection</td><td class="zh">n. 感染</td></tr>
+<tr data-en="Vitamins" data-zh="n. 維他命"><td class="num">10</td><td class="en">Vitamins</td><td class="zh">n. 維他命</td></tr>
+<tr data-en="X-ray" data-zh="n. X 光"><td class="num">11</td><td class="en">X-ray</td><td class="zh">n. X 光</td></tr>
+<tr data-en="Therapy" data-zh="n. 療程"><td class="num">12</td><td class="en">Therapy</td><td class="zh">n. 療程</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card section" id="s14">
+  <h2><span class="badge">14</span> 家居 <span class="en-title">Home</span></h2>
+
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">詞性 / 中文</th></tr></thead>
+      <tbody>
+<tr data-en="Apartment" data-zh="n. 公寓"><td class="num">1</td><td class="en">Apartment</td><td class="zh">n. 公寓</td></tr>
+<tr data-en="Accommodation" data-zh="n. 住宿"><td class="num">2</td><td class="en">Accommodation</td><td class="zh">n. 住宿</td></tr>
+<tr data-en="Living room" data-zh="phr. 客廳"><td class="num">3</td><td class="en">Living room</td><td class="zh">phr. 客廳</td></tr>
+<tr data-en="Ceiling" data-zh="n. 天花"><td class="num">4</td><td class="en">Ceiling</td><td class="zh">n. 天花</td></tr>
+<tr data-en="Storey" data-zh="n. 樓層"><td class="num">5</td><td class="en">Storey</td><td class="zh">n. 樓層</td></tr>
+<tr data-en="Bookshelf" data-zh="n. 書櫃"><td class="num">6</td><td class="en">Bookshelf</td><td class="zh">n. 書櫃</td></tr>
+<tr data-en="Vacuum cleaner" data-zh="phr. 吸塵機"><td class="num">7</td><td class="en">Vacuum cleaner</td><td class="zh">phr. 吸塵機</td></tr>
+<tr data-en="Toaster" data-zh="n. 多士爐"><td class="num">8</td><td class="en">Toaster</td><td class="zh">n. 多士爐</td></tr>
+<tr data-en="Cushion" data-zh="n. 坐墊"><td class="num">9</td><td class="en">Cushion</td><td class="zh">n. 坐墊</td></tr>
+<tr data-en="Doormat" data-zh="n. 地墊"><td class="num">10</td><td class="en">Doormat</td><td class="zh">n. 地墊</td></tr>
+<tr data-en="Shoe cabinet" data-zh="phr. 鞋架"><td class="num">11</td><td class="en">Shoe cabinet</td><td class="zh">phr. 鞋架</td></tr>
+<tr data-en="TV stand" data-zh="phr. 電視櫃"><td class="num">12</td><td class="en">TV stand</td><td class="zh">phr. 電視櫃</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+  <div class="part-head" id="part2">
+    <h1>第二部分　香港地鐵站名</h1>
+    <span class="en">Part 2 MTR Station Names</span>
+  </div>
+  <div class="mtr-tip">
+    <strong>學習提示：</strong>站名是 Paper 3 地圖題、方向題常見內容，務必熟記中英對照！
+  </div>
+
+  
+<section class="card section mtr-section" id="mtr-kt">
+  <h2><span class="badge mtr">MTR</span> 觀塘線 Kwun Tong Line</h2>
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">中文</th></tr></thead>
+      <tbody>
+<tr data-en="Whampoa" data-zh="黃埔"><td class="num">1</td><td class="en">Whampoa</td><td class="zh">黃埔</td></tr><tr data-en="Ho Man Tin" data-zh="何文田"><td class="num">2</td><td class="en">Ho Man Tin</td><td class="zh">何文田</td></tr><tr data-en="Yau Ma Tei" data-zh="油麻地"><td class="num">3</td><td class="en">Yau Ma Tei</td><td class="zh">油麻地</td></tr><tr data-en="Mong Kok" data-zh="旺角"><td class="num">4</td><td class="en">Mong Kok</td><td class="zh">旺角</td></tr><tr data-en="Prince Edward" data-zh="太子"><td class="num">5</td><td class="en">Prince Edward</td><td class="zh">太子</td></tr><tr data-en="Shek Kip Mei" data-zh="石硤尾"><td class="num">6</td><td class="en">Shek Kip Mei</td><td class="zh">石硤尾</td></tr><tr data-en="Kowloon Tong" data-zh="九龍塘"><td class="num">7</td><td class="en">Kowloon Tong</td><td class="zh">九龍塘</td></tr><tr data-en="Lok Fu" data-zh="樂富"><td class="num">8</td><td class="en">Lok Fu</td><td class="zh">樂富</td></tr><tr data-en="Wong Tai Sin" data-zh="黃大仙"><td class="num">9</td><td class="en">Wong Tai Sin</td><td class="zh">黃大仙</td></tr><tr data-en="Diamond Hill" data-zh="鑽石山"><td class="num">10</td><td class="en">Diamond Hill</td><td class="zh">鑽石山</td></tr><tr data-en="Choi Hung" data-zh="彩虹"><td class="num">11</td><td class="en">Choi Hung</td><td class="zh">彩虹</td></tr><tr data-en="Kowloon Bay" data-zh="九龍灣"><td class="num">12</td><td class="en">Kowloon Bay</td><td class="zh">九龍灣</td></tr><tr data-en="Ngau Tau Kok" data-zh="牛頭角"><td class="num">13</td><td class="en">Ngau Tau Kok</td><td class="zh">牛頭角</td></tr><tr data-en="Kwun Tong" data-zh="觀塘"><td class="num">14</td><td class="en">Kwun Tong</td><td class="zh">觀塘</td></tr><tr data-en="Lam Tin" data-zh="藍田"><td class="num">15</td><td class="en">Lam Tin</td><td class="zh">藍田</td></tr><tr data-en="Yau Tong" data-zh="油塘"><td class="num">16</td><td class="en">Yau Tong</td><td class="zh">油塘</td></tr><tr data-en="Tiu Keng Leng" data-zh="調景嶺"><td class="num">17</td><td class="en">Tiu Keng Leng</td><td class="zh">調景嶺</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card section mtr-section" id="mtr-tw">
+  <h2><span class="badge mtr">MTR</span> 荃灣線 Tsuen Wan Line</h2>
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">中文</th></tr></thead>
+      <tbody>
+<tr data-en="Tsuen Wan" data-zh="荃灣"><td class="num">1</td><td class="en">Tsuen Wan</td><td class="zh">荃灣</td></tr><tr data-en="Tai Wo Hau" data-zh="大窩口"><td class="num">2</td><td class="en">Tai Wo Hau</td><td class="zh">大窩口</td></tr><tr data-en="Kwai Hing" data-zh="葵興"><td class="num">3</td><td class="en">Kwai Hing</td><td class="zh">葵興</td></tr><tr data-en="Kwai Fong" data-zh="葵芳"><td class="num">4</td><td class="en">Kwai Fong</td><td class="zh">葵芳</td></tr><tr data-en="Lai King" data-zh="荔景"><td class="num">5</td><td class="en">Lai King</td><td class="zh">荔景</td></tr><tr data-en="Lai Chi Kok" data-zh="荔枝角"><td class="num">6</td><td class="en">Lai Chi Kok</td><td class="zh">荔枝角</td></tr><tr data-en="Mei Foo" data-zh="美孚"><td class="num">7</td><td class="en">Mei Foo</td><td class="zh">美孚</td></tr><tr data-en="Cheung Sha Wan" data-zh="長沙灣"><td class="num">8</td><td class="en">Cheung Sha Wan</td><td class="zh">長沙灣</td></tr><tr data-en="Sham Shui Po" data-zh="深水埗"><td class="num">9</td><td class="en">Sham Shui Po</td><td class="zh">深水埗</td></tr><tr data-en="Prince Edward" data-zh="太子"><td class="num">10</td><td class="en">Prince Edward</td><td class="zh">太子</td></tr><tr data-en="Mong Kok" data-zh="旺角"><td class="num">11</td><td class="en">Mong Kok</td><td class="zh">旺角</td></tr><tr data-en="Yau Ma Tei" data-zh="油麻地"><td class="num">12</td><td class="en">Yau Ma Tei</td><td class="zh">油麻地</td></tr><tr data-en="Jordan" data-zh="佐敦"><td class="num">13</td><td class="en">Jordan</td><td class="zh">佐敦</td></tr><tr data-en="Tsim Sha Tsui" data-zh="尖沙咀"><td class="num">14</td><td class="en">Tsim Sha Tsui</td><td class="zh">尖沙咀</td></tr><tr data-en="Admiralty" data-zh="金鐘"><td class="num">15</td><td class="en">Admiralty</td><td class="zh">金鐘</td></tr><tr data-en="Central" data-zh="中環"><td class="num">16</td><td class="en">Central</td><td class="zh">中環</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card section mtr-section" id="mtr-il">
+  <h2><span class="badge mtr">MTR</span> 港島線 Island Line</h2>
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">中文</th></tr></thead>
+      <tbody>
+<tr data-en="Kennedy Town" data-zh="堅尼地城"><td class="num">1</td><td class="en">Kennedy Town</td><td class="zh">堅尼地城</td></tr><tr data-en="HKU" data-zh="香港大學"><td class="num">2</td><td class="en">HKU</td><td class="zh">香港大學</td></tr><tr data-en="Sai Ying Pun" data-zh="西營盤"><td class="num">3</td><td class="en">Sai Ying Pun</td><td class="zh">西營盤</td></tr><tr data-en="Sheung Wan" data-zh="上環"><td class="num">4</td><td class="en">Sheung Wan</td><td class="zh">上環</td></tr><tr data-en="Central" data-zh="中環"><td class="num">5</td><td class="en">Central</td><td class="zh">中環</td></tr><tr data-en="Admiralty" data-zh="金鐘"><td class="num">6</td><td class="en">Admiralty</td><td class="zh">金鐘</td></tr><tr data-en="Wan Chai" data-zh="灣仔"><td class="num">7</td><td class="en">Wan Chai</td><td class="zh">灣仔</td></tr><tr data-en="Causeway Bay" data-zh="銅鑼灣"><td class="num">8</td><td class="en">Causeway Bay</td><td class="zh">銅鑼灣</td></tr><tr data-en="Tin Hau" data-zh="天后"><td class="num">9</td><td class="en">Tin Hau</td><td class="zh">天后</td></tr><tr data-en="Fortress Hill" data-zh="炮台山"><td class="num">10</td><td class="en">Fortress Hill</td><td class="zh">炮台山</td></tr><tr data-en="North Point" data-zh="北角"><td class="num">11</td><td class="en">North Point</td><td class="zh">北角</td></tr><tr data-en="Quarry Bay" data-zh="鰂魚涌"><td class="num">12</td><td class="en">Quarry Bay</td><td class="zh">鰂魚涌</td></tr><tr data-en="Tai Koo" data-zh="太古"><td class="num">13</td><td class="en">Tai Koo</td><td class="zh">太古</td></tr><tr data-en="Sai Wan Ho" data-zh="西灣河"><td class="num">14</td><td class="en">Sai Wan Ho</td><td class="zh">西灣河</td></tr><tr data-en="Shau Kei Wan" data-zh="筲箕灣"><td class="num">15</td><td class="en">Shau Kei Wan</td><td class="zh">筲箕灣</td></tr><tr data-en="Heng Fa Chuen" data-zh="杏花邨"><td class="num">16</td><td class="en">Heng Fa Chuen</td><td class="zh">杏花邨</td></tr><tr data-en="Chai Wan" data-zh="柴灣"><td class="num">17</td><td class="en">Chai Wan</td><td class="zh">柴灣</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card section mtr-section" id="mtr-tko">
+  <h2><span class="badge mtr">MTR</span> 將軍澳線 Tseung Kwan O Line</h2>
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">中文</th></tr></thead>
+      <tbody>
+<tr data-en="North Point" data-zh="北角"><td class="num">1</td><td class="en">North Point</td><td class="zh">北角</td></tr><tr data-en="Quarry Bay" data-zh="鰂魚涌"><td class="num">2</td><td class="en">Quarry Bay</td><td class="zh">鰂魚涌</td></tr><tr data-en="Yau Tong" data-zh="油塘"><td class="num">3</td><td class="en">Yau Tong</td><td class="zh">油塘</td></tr><tr data-en="Tiu Keng Leng" data-zh="調景嶺"><td class="num">4</td><td class="en">Tiu Keng Leng</td><td class="zh">調景嶺</td></tr><tr data-en="Tseung Kwan O" data-zh="將軍澳"><td class="num">5</td><td class="en">Tseung Kwan O</td><td class="zh">將軍澳</td></tr><tr data-en="Hang Hau" data-zh="坑口"><td class="num">6</td><td class="en">Hang Hau</td><td class="zh">坑口</td></tr><tr data-en="Po Lam" data-zh="寶琳"><td class="num">7</td><td class="en">Po Lam</td><td class="zh">寶琳</td></tr><tr data-en="LOHAS Park" data-zh="康城"><td class="num">8</td><td class="en">LOHAS Park</td><td class="zh">康城</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card section mtr-section" id="mtr-sil">
+  <h2><span class="badge mtr">MTR</span> 南港島線 South Island Line</h2>
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">中文</th></tr></thead>
+      <tbody>
+<tr data-en="Admiralty" data-zh="金鐘"><td class="num">1</td><td class="en">Admiralty</td><td class="zh">金鐘</td></tr><tr data-en="Ocean Park" data-zh="海洋公園"><td class="num">2</td><td class="en">Ocean Park</td><td class="zh">海洋公園</td></tr><tr data-en="Wong Chuk Hang" data-zh="黃竹坑"><td class="num">3</td><td class="en">Wong Chuk Hang</td><td class="zh">黃竹坑</td></tr><tr data-en="Lei Tung" data-zh="利東"><td class="num">4</td><td class="en">Lei Tung</td><td class="zh">利東</td></tr><tr data-en="South Horizons" data-zh="海怡半島"><td class="num">5</td><td class="en">South Horizons</td><td class="zh">海怡半島</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card section mtr-section" id="mtr-tc">
+  <h2><span class="badge mtr">MTR</span> 東涌線、迪士尼線、機場快線 Tung Chung / Disneyland / Airport Express</h2>
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">中文</th></tr></thead>
+      <tbody>
+<tr data-en="Tung Chung" data-zh="東涌"><td class="num">1</td><td class="en">Tung Chung</td><td class="zh">東涌</td></tr><tr data-en="Sunny Bay" data-zh="欣澳"><td class="num">2</td><td class="en">Sunny Bay</td><td class="zh">欣澳</td></tr><tr data-en="Disneyland Resort" data-zh="迪士尼"><td class="num">3</td><td class="en">Disneyland Resort</td><td class="zh">迪士尼</td></tr><tr data-en="Tsing Yi" data-zh="青衣"><td class="num">4</td><td class="en">Tsing Yi</td><td class="zh">青衣</td></tr><tr data-en="Lai King" data-zh="荔景"><td class="num">5</td><td class="en">Lai King</td><td class="zh">荔景</td></tr><tr data-en="Nam Cheong" data-zh="南昌"><td class="num">6</td><td class="en">Nam Cheong</td><td class="zh">南昌</td></tr><tr data-en="Olympic" data-zh="奧運"><td class="num">7</td><td class="en">Olympic</td><td class="zh">奧運</td></tr><tr data-en="Kowloon" data-zh="九龍"><td class="num">8</td><td class="en">Kowloon</td><td class="zh">九龍</td></tr><tr data-en="Hong Kong" data-zh="香港"><td class="num">9</td><td class="en">Hong Kong</td><td class="zh">香港</td></tr><tr data-en="Airport" data-zh="機場"><td class="num">10</td><td class="en">Airport</td><td class="zh">機場</td></tr><tr data-en="AsiaWorld-Expo" data-zh="博覽館"><td class="num">11</td><td class="en">AsiaWorld-Expo</td><td class="zh">博覽館</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card section mtr-section" id="mtr-er">
+  <h2><span class="badge mtr">MTR</span> 東鐵線 East Rail Line</h2>
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">中文</th></tr></thead>
+      <tbody>
+<tr data-en="Lok Ma Chau" data-zh="落馬洲"><td class="num">1</td><td class="en">Lok Ma Chau</td><td class="zh">落馬洲</td></tr><tr data-en="Lo Wu" data-zh="羅湖"><td class="num">2</td><td class="en">Lo Wu</td><td class="zh">羅湖</td></tr><tr data-en="Sheung Shui" data-zh="上水"><td class="num">3</td><td class="en">Sheung Shui</td><td class="zh">上水</td></tr><tr data-en="Fanling" data-zh="粉嶺"><td class="num">4</td><td class="en">Fanling</td><td class="zh">粉嶺</td></tr><tr data-en="Tai Wo" data-zh="太和"><td class="num">5</td><td class="en">Tai Wo</td><td class="zh">太和</td></tr><tr data-en="Tai Po Market" data-zh="大埔墟"><td class="num">6</td><td class="en">Tai Po Market</td><td class="zh">大埔墟</td></tr><tr data-en="University" data-zh="大學"><td class="num">7</td><td class="en">University</td><td class="zh">大學</td></tr><tr data-en="Fo Tan" data-zh="火炭"><td class="num">8</td><td class="en">Fo Tan</td><td class="zh">火炭</td></tr><tr data-en="Racecourse" data-zh="馬場"><td class="num">9</td><td class="en">Racecourse</td><td class="zh">馬場</td></tr><tr data-en="Sha Tin" data-zh="沙田"><td class="num">10</td><td class="en">Sha Tin</td><td class="zh">沙田</td></tr><tr data-en="Tai Wai" data-zh="大圍"><td class="num">11</td><td class="en">Tai Wai</td><td class="zh">大圍</td></tr><tr data-en="Kowloon Tong" data-zh="九龍塘"><td class="num">12</td><td class="en">Kowloon Tong</td><td class="zh">九龍塘</td></tr><tr data-en="Mong Kok East" data-zh="旺角東"><td class="num">13</td><td class="en">Mong Kok East</td><td class="zh">旺角東</td></tr><tr data-en="Hung Hom" data-zh="紅磡"><td class="num">14</td><td class="en">Hung Hom</td><td class="zh">紅磡</td></tr><tr data-en="East Tsim Sha Tsui" data-zh="尖東"><td class="num">15</td><td class="en">East Tsim Sha Tsui</td><td class="zh">尖東</td></tr><tr data-en="Exhibition Centre" data-zh="會展"><td class="num">16</td><td class="en">Exhibition Centre</td><td class="zh">會展</td></tr><tr data-en="Admiralty" data-zh="金鐘"><td class="num">17</td><td class="en">Admiralty</td><td class="zh">金鐘</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card section mtr-section" id="mtr-tm1">
+  <h2><span class="badge mtr">MTR</span> 屯馬線（烏溪沙 → 土瓜灣）Tuen Ma Line (Wu Kai Sha → To Kwa Wan)</h2>
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">中文</th></tr></thead>
+      <tbody>
+<tr data-en="Wu Kai Sha" data-zh="烏溪沙"><td class="num">1</td><td class="en">Wu Kai Sha</td><td class="zh">烏溪沙</td></tr><tr data-en="Ma On Shan" data-zh="馬鞍山"><td class="num">2</td><td class="en">Ma On Shan</td><td class="zh">馬鞍山</td></tr><tr data-en="Heng On" data-zh="恆安"><td class="num">3</td><td class="en">Heng On</td><td class="zh">恆安</td></tr><tr data-en="Tai Shui Hang" data-zh="大水坑"><td class="num">4</td><td class="en">Tai Shui Hang</td><td class="zh">大水坑</td></tr><tr data-en="Shek Mun" data-zh="石門"><td class="num">5</td><td class="en">Shek Mun</td><td class="zh">石門</td></tr><tr data-en="City One" data-zh="第一城"><td class="num">6</td><td class="en">City One</td><td class="zh">第一城</td></tr><tr data-en="Sha Tin Wai" data-zh="沙田圍"><td class="num">7</td><td class="en">Sha Tin Wai</td><td class="zh">沙田圍</td></tr><tr data-en="Che Kung Temple" data-zh="車公廟"><td class="num">8</td><td class="en">Che Kung Temple</td><td class="zh">車公廟</td></tr><tr data-en="Tai Wai" data-zh="大圍"><td class="num">9</td><td class="en">Tai Wai</td><td class="zh">大圍</td></tr><tr data-en="Hin Keng" data-zh="顯徑"><td class="num">10</td><td class="en">Hin Keng</td><td class="zh">顯徑</td></tr><tr data-en="Diamond Hill" data-zh="鑽石山"><td class="num">11</td><td class="en">Diamond Hill</td><td class="zh">鑽石山</td></tr><tr data-en="Kai Tak" data-zh="啟德"><td class="num">12</td><td class="en">Kai Tak</td><td class="zh">啟德</td></tr><tr data-en="Sung Wong Toi" data-zh="宋皇臺"><td class="num">13</td><td class="en">Sung Wong Toi</td><td class="zh">宋皇臺</td></tr><tr data-en="To Kwa Wan" data-zh="土瓜灣"><td class="num">14</td><td class="en">To Kwa Wan</td><td class="zh">土瓜灣</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="card section mtr-section" id="mtr-tm2">
+  <h2><span class="badge mtr">MTR</span> 屯馬線（黃埔 → 屯門）Tuen Ma Line (Whampoa → Tuen Mun)</h2>
+  <div class="table-wrap">
+    <table class="vocab">
+      <thead><tr><th class="num">No.</th><th class="en">English</th><th class="zh">中文</th></tr></thead>
+      <tbody>
+<tr data-en="Whampoa" data-zh="黃埔"><td class="num">1</td><td class="en">Whampoa</td><td class="zh">黃埔</td></tr><tr data-en="Ho Man Tin" data-zh="何文田"><td class="num">2</td><td class="en">Ho Man Tin</td><td class="zh">何文田</td></tr><tr data-en="Hung Hom" data-zh="紅磡"><td class="num">3</td><td class="en">Hung Hom</td><td class="zh">紅磡</td></tr><tr data-en="Tsim Sha Tsui" data-zh="尖沙咀"><td class="num">4</td><td class="en">Tsim Sha Tsui</td><td class="zh">尖沙咀</td></tr><tr data-en="Austin" data-zh="柯士甸"><td class="num">5</td><td class="en">Austin</td><td class="zh">柯士甸</td></tr><tr data-en="Nam Cheong" data-zh="南昌"><td class="num">6</td><td class="en">Nam Cheong</td><td class="zh">南昌</td></tr><tr data-en="Mei Foo" data-zh="美孚"><td class="num">7</td><td class="en">Mei Foo</td><td class="zh">美孚</td></tr><tr data-en="Tsuen Wan West" data-zh="荃灣西"><td class="num">8</td><td class="en">Tsuen Wan West</td><td class="zh">荃灣西</td></tr><tr data-en="Kam Sheung Road" data-zh="錦上路"><td class="num">9</td><td class="en">Kam Sheung Road</td><td class="zh">錦上路</td></tr><tr data-en="Yuen Long" data-zh="元朗"><td class="num">10</td><td class="en">Yuen Long</td><td class="zh">元朗</td></tr><tr data-en="Long Ping" data-zh="朗屏"><td class="num">11</td><td class="en">Long Ping</td><td class="zh">朗屏</td></tr><tr data-en="Tin Shui Wai" data-zh="天水圍"><td class="num">12</td><td class="en">Tin Shui Wai</td><td class="zh">天水圍</td></tr><tr data-en="Siu Hong" data-zh="兆康"><td class="num">13</td><td class="en">Siu Hong</td><td class="zh">兆康</td></tr><tr data-en="Tuen Mun" data-zh="屯門"><td class="num">14</td><td class="en">Tuen Mun</td><td class="zh">屯門</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+  <p class="continued">—— To be continued ——</p>
+
+  </div><!-- /browseBlock -->
+
+  <div class="part-head" id="quiz">
+    <h1>測驗模式</h1>
+    <span class="en">Quiz</span>
+  </div>
+  <section class="card quiz-panel">
+    <p style="margin-top:0;color:var(--muted)">從全部詞彙與地鐵站名隨機抽題。成績只保存在本機瀏覽器，不會上傳。</p>
+    <div class="quiz-modes" role="group" aria-label="測驗模式">
+      <button type="button" class="btn btn-secondary active" data-mode="en2zh-mc">看英文 → 選中文</button>
+      <button type="button" class="btn btn-ghost" data-mode="en2zh-type">看英文 → 輸入中文</button>
+      <button type="button" class="btn btn-ghost" data-mode="zh2en-mc">看中文 → 選英文</button>
+      <button type="button" class="btn btn-ghost" data-mode="zh2en-type">看中文 → 輸入英文</button>
+    </div>
+    <div class="quiz-stats">
+      <span>得分：<strong id="qScore">0</strong></span>
+      <span>已答：<strong id="qTotal">0</strong></span>
+      <span>正確率：<strong id="qRate">—</strong></span>
+    </div>
+    <div class="quiz-card" id="quizCard">
+      <div class="quiz-prompt-label" id="qLabel">英文</div>
+      <p class="quiz-prompt" id="qPrompt">—</p>
+      <div class="quiz-cat" id="qCat"></div>
+      <div id="qBody"></div>
+      <div class="quiz-feedback" id="qFeedback"></div>
+    </div>
+    <div class="quiz-actions">
+      <button type="button" class="btn btn-primary" id="qNext">下一題</button>
+      <button type="button" class="btn btn-ghost" id="qReset">重設分數</button>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  English Enrichment · Paper 3 Vocabulary + MTR
+</footer>
+
+<script>
+const DATA = {"months": [["一月", "January"], ["二月", "February"], ["三月", "March"], ["四月", "April"], ["五月", "May"], ["六月", "June"], ["七月", "July"], ["八月", "August"], ["九月", "September"], ["十月", "October"], ["十一月", "November"], ["十二月", "December"]], "seasons": [["春", "Spring"], ["夏", "Summer"], ["秋", "Autumn / Fall"], ["冬", "Winter"]], "examples": [["會議將於 12 月 15 日舉行。", "The conference will take place on December 15."], ["我在八月出生。", "I was born in August."], ["我的生日是 8 月 25 號。", "My birthday is on August 25th."], ["下一個公眾假期是什麼時候？7 月 4 日。", "When is the next public holiday? It's on July 4th."], ["下一次團隊會議是每月第一個星期一。", "When is the next team meeting? It's on the first Monday of every month."]], "frequency": [["daily", "每天"], ["weekly", "每週"], ["monthly / once a month", "每月一次"], ["seasonally", "每季"], ["annually / every year", "每年"]], "days": [["星期日", "Sunday"], ["星期一", "Monday"], ["星期二", "Tuesday"], ["星期三", "Wednesday"], ["星期四", "Thursday"], ["星期五", "Friday"], ["星期六", "Saturday"]], "sports": [["Sprint", "短跑"], ["Hurdle", "跨欄"], ["Hockey", "曲棍球"], ["Baseball", "棒球"], ["Marathon", "馬拉松"], ["Javelin Throw", "標槍"], ["Kendo", "劍道"], ["Archery", "射箭"], ["Gymnastics", "體操"], ["Aerobics", "有氧運動"], ["Martial arts", "武術"], ["Boxing", "拳擊"], ["Karate", "空手道"], ["Judo", "柔道"], ["Relay", "接力"], ["Tai Chi", "太極"], ["Weight Lifting", "舉重"]], "jobs": [["Accountant", "會計師"], ["Adviser / Advisor", "顧問"], ["Artist", "藝術家"], ["Celebrity", "名人"], ["Chemist", "化學家"], ["Dietician", "營養師"], ["Real estate agent", "房地產經紀人"], ["Politician", "政治家"], ["Entrepreneur", "企業家"], ["Hairstylist", "髮型師"], ["Barrister", "大律師"], ["Attorney / Lawyer", "律師"], ["Auditor", "審計師"], ["Practitioner", "從業者"], ["Pharmacist", "藥劑師"], ["Architect", "建築師"], ["Pilot", "飛行員"], ["Hawker", "小販"], ["Librarian", "圖書管理員"], ["Photographer", "攝影師"], ["Consultant", "顧問"], ["Salesperson", "銷售員"], ["Bodyguard", "保鏢"], ["Calligrapher", "書法家"], ["Composer", "作曲家"], ["Clerk", "文員"], ["Computer engineer", "電腦工程師"], ["Programmer", "程序員"], ["Editor", "編輯"]], "measurement": [["each / every", "每個"], ["most / a majority of", "大部份"], ["a lot of / many / much", "很多"], ["different kinds of / various", "不同種類"], ["some / a few / a little", "有些"], ["a minority", "小部分"], ["few / little", "少"], ["no / none", "沒有"], ["millions of", "數以百萬計"], ["thousands of", "數以千計"], ["hundreds of", "數以百計"], ["triple / 3 times", "3 倍"], ["double", "2 倍"], ["a couple of / a pair of", "兩個 / 一對"], ["three quarters", "四分之三"], ["half", "一半"], ["one-third", "三分之一"], ["a quarter", "四分之一"], ["one-fifth", "五分之一"], ["percent (%)", "百分比"], ["more than / over", "超過"], ["both", "兩者皆是"], ["another", "另一"], ["other", "其他"], ["once", "一次"], ["twice", "兩次"], ["three times", "三次"], ["approximately / about", "大約"], ["nearly / almost", "差不多"], ["exactly", "正是"], ["less / fewer", "較少"], ["maximum", "最大"], ["minimum", "最小"], ["sole / unique", "唯一 / 獨一無二"], ["increase / rise / go up", "增加"], ["decrease / drop / reduce", "減少"], ["kilometres (km)", "公里"], ["metres (m)", "米"], ["centimetres (cm)", "厘米"], ["kilograms (kg)", "公斤"], ["grams (g)", "克"], ["average", "平均"], ["total", "總共"]], "time": [["seconds (s)", "秒"], ["minutes (min)", "分鐘"], ["hours (h)", "小時"], ["days", "日"], ["date", "日期"], ["weekdays", "平日"], ["weeks", "星期"], ["weekends", "周末"], ["month", "月"], ["year", "年"], ["annually", "每年"], ["decade", "十年"], ["century", "世紀"], ["previous / last", "之前的 / 上一個"], ["next / following", "下一個 / 接著的"], ["yesterday", "昨天"], ["today", "今天"], ["tomorrow", "明天"], ["ago", "以前"], ["ancient", "古代的"]], "countries": [["China", "中國"], ["Beijing", "北京"], ["Shanghai", "上海"], ["Shenzhen", "深圳"], ["Guangzhou", "廣州"], ["Canada", "加拿大"], ["Toronto", "多倫多"], ["Vancouver", "溫哥華"], ["Australia", "澳洲"], ["Sydney", "悉尼"], ["Melbourne", "墨爾本"], ["The USA", "美國"], ["New York", "紐約"], ["Los Angeles", "洛杉磯"], ["California", "加州"], ["Thailand", "泰國"], ["Bangkok", "曼谷"], ["Malaysia", "馬來西亞"], ["Kuala Lumpur", "吉隆坡"], ["Philippines", "菲律賓"], ["Singapore", "新加坡"], ["Korea", "韓國"], ["Seoul", "首爾"], ["Japan", "日本"], ["Tokyo", "東京"], ["Osaka", "大阪"], ["Taiwan", "台灣"], ["Italy", "意大利"], ["Rome", "羅馬"], ["France", "法國"], ["Paris", "巴黎"], ["Germany", "德國"], ["Berlin", "柏林"], ["Britain / UK", "英國"], ["London", "倫敦"], ["Spain", "西班牙"], ["Russia", "俄羅斯"], ["Brazil", "巴西"], ["New Zealand", "紐西蘭"], ["Austria", "奧地利"], ["Switzerland", "瑞士"], ["Asia", "亞洲"], ["Europe", "歐洲"], ["Africa", "非洲"]], "nationality": [["Chinese", "中國籍"], ["American", "美籍"], ["British", "英國籍"], ["Canadian", "加拿大籍"], ["Australian", "澳洲籍"], ["Japanese", "日本籍"], ["Korean", "韓國籍"], ["French", "法國籍"], ["German", "德國籍"], ["Italian", "意大利籍"], ["Spanish", "西班牙籍"], ["Thai", "泰國籍"], ["Malaysian", "馬來西亞籍"], ["Singaporean", "新加坡籍"], ["Filipino", "菲律賓籍"], ["Taiwanese", "台灣籍"], ["Indian", "印度籍"], ["Russian", "俄羅斯籍"], ["Brazilian", "巴西籍"], ["Swiss", "瑞士籍"], ["Austrian", "奧地利籍"]], "tourist": [["The Peak", "山頂"], ["Ocean Park", "海洋公園"], ["Disneyland", "迪士尼"], ["Avenue of Stars", "星光大道"], ["Golden Bauhinia Square", "金紫荊廣場"], ["Big Buddha", "天壇大佛"], ["Po Lin Monastery", "寶蓮寺"], ["Repulse Bay", "淺水灣"], ["Temple Street", "廟街"], ["Lan Kwai Fong", "蘭桂坊"], ["Times Square", "時代廣場"], ["Star Ferry Pier", "天星碼頭"], ["Tsing Ma Bridge", "青馬大橋"], ["Hong Kong Coliseum", "紅館"], ["Victoria Park", "維多利亞公園"], ["Science Museum", "科學館"], ["Space Museum", "太空館"], ["Hong Kong Cultural Centre", "香港文化中心"], ["Chek Lap Kok Airport", "赤鱲角機場"], ["Ladies' Street", "女人街"]], "research": [["research", "研究"], ["survey", "調查"], ["questionnaire", "問卷"], ["interview", "訪問"], ["case study", "個案研究"], ["project", "專題研習"], ["presentation", "報告 / 簡報"], ["PowerPoint slides", "投影片"], ["charts and tables", "圖表"], ["library", "圖書館"], ["the Internet / online", "互聯網 / 網上"], ["newspaper articles", "報紙文章"], ["document", "文件"], ["video clips", "影片"], ["digital photos", "數碼相片"]], "direction": [["left / right", "左 / 右"], ["top left / top right", "左上角 / 右上角"], ["bottom left / bottom right", "左下角 / 右下角"], ["row / column", "橫行 / 直行"], ["east / south / west / north", "東 / 南 / 西 / 北"], ["northeast / southeast", "東北 / 東南"], ["southwest / northwest", "西南 / 西北"]], "geometry": [["triangle", "三角形"], ["square", "正方形"], ["rectangle", "長方形"], ["circle / round", "圓形"], ["oval", "鵝蛋形"], ["star", "星形"], ["heart", "心形"], ["diamond", "菱形"], ["sphere", "球體"], ["cylinder", "圓柱形"], ["cone", "圓錐形"], ["cube", "方體"], ["straight / curved / wavy line", "直線 / 曲線 / 波浪線"], ["dotted / broken line", "點線 / 虛線"], ["arrow", "箭咀"], ["tick / check", "剔號"], ["cross", "交叉"], ["question mark", "問號"]], "health": [["Pharmacy", "n. 藥房"], ["Pharmacist", "n. 藥劑師"], ["First aid", "phr. 急救"], ["Prescription", "n. 處方"], ["Injection", "n. 注射"], ["Side effect", "phr. 副作用"], ["Vaccine / Vaccination", "n. 疫苗 / 接種"], ["Antibiotics", "n. 抗生素"], ["Infection", "n. 感染"], ["Vitamins", "n. 維他命"], ["X-ray", "n. X 光"], ["Therapy", "n. 療程"]], "home": [["Apartment", "n. 公寓"], ["Accommodation", "n. 住宿"], ["Living room", "phr. 客廳"], ["Ceiling", "n. 天花"], ["Storey", "n. 樓層"], ["Bookshelf", "n. 書櫃"], ["Vacuum cleaner", "phr. 吸塵機"], ["Toaster", "n. 多士爐"], ["Cushion", "n. 坐墊"], ["Doormat", "n. 地墊"], ["Shoe cabinet", "phr. 鞋架"], ["TV stand", "phr. 電視櫃"]], "stations": {"kt": {"title": "觀塘線 Kwun Tong Line", "items": [["黃埔", "Whampoa"], ["何文田", "Ho Man Tin"], ["油麻地", "Yau Ma Tei"], ["旺角", "Mong Kok"], ["太子", "Prince Edward"], ["石硤尾", "Shek Kip Mei"], ["九龍塘", "Kowloon Tong"], ["樂富", "Lok Fu"], ["黃大仙", "Wong Tai Sin"], ["鑽石山", "Diamond Hill"], ["彩虹", "Choi Hung"], ["九龍灣", "Kowloon Bay"], ["牛頭角", "Ngau Tau Kok"], ["觀塘", "Kwun Tong"], ["藍田", "Lam Tin"], ["油塘", "Yau Tong"], ["調景嶺", "Tiu Keng Leng"]]}, "tw": {"title": "荃灣線 Tsuen Wan Line", "items": [["荃灣", "Tsuen Wan"], ["大窩口", "Tai Wo Hau"], ["葵興", "Kwai Hing"], ["葵芳", "Kwai Fong"], ["荔景", "Lai King"], ["荔枝角", "Lai Chi Kok"], ["美孚", "Mei Foo"], ["長沙灣", "Cheung Sha Wan"], ["深水埗", "Sham Shui Po"], ["太子", "Prince Edward"], ["旺角", "Mong Kok"], ["油麻地", "Yau Ma Tei"], ["佐敦", "Jordan"], ["尖沙咀", "Tsim Sha Tsui"], ["金鐘", "Admiralty"], ["中環", "Central"]]}, "il": {"title": "港島線 Island Line", "items": [["堅尼地城", "Kennedy Town"], ["香港大學", "HKU"], ["西營盤", "Sai Ying Pun"], ["上環", "Sheung Wan"], ["中環", "Central"], ["金鐘", "Admiralty"], ["灣仔", "Wan Chai"], ["銅鑼灣", "Causeway Bay"], ["天后", "Tin Hau"], ["炮台山", "Fortress Hill"], ["北角", "North Point"], ["鰂魚涌", "Quarry Bay"], ["太古", "Tai Koo"], ["西灣河", "Sai Wan Ho"], ["筲箕灣", "Shau Kei Wan"], ["杏花邨", "Heng Fa Chuen"], ["柴灣", "Chai Wan"]]}, "tko": {"title": "將軍澳線 Tseung Kwan O Line", "items": [["北角", "North Point"], ["鰂魚涌", "Quarry Bay"], ["油塘", "Yau Tong"], ["調景嶺", "Tiu Keng Leng"], ["將軍澳", "Tseung Kwan O"], ["坑口", "Hang Hau"], ["寶琳", "Po Lam"], ["康城", "LOHAS Park"]]}, "sil": {"title": "南港島線 South Island Line", "items": [["金鐘", "Admiralty"], ["海洋公園", "Ocean Park"], ["黃竹坑", "Wong Chuk Hang"], ["利東", "Lei Tung"], ["海怡半島", "South Horizons"]]}, "tc": {"title": "東涌線、迪士尼線、機場快線 Tung Chung / Disneyland / Airport Express", "items": [["東涌", "Tung Chung"], ["欣澳", "Sunny Bay"], ["迪士尼", "Disneyland Resort"], ["青衣", "Tsing Yi"], ["荔景", "Lai King"], ["南昌", "Nam Cheong"], ["奧運", "Olympic"], ["九龍", "Kowloon"], ["香港", "Hong Kong"], ["機場", "Airport"], ["博覽館", "AsiaWorld-Expo"]]}, "er": {"title": "東鐵線 East Rail Line", "items": [["落馬洲", "Lok Ma Chau"], ["羅湖", "Lo Wu"], ["上水", "Sheung Shui"], ["粉嶺", "Fanling"], ["太和", "Tai Wo"], ["大埔墟", "Tai Po Market"], ["大學", "University"], ["火炭", "Fo Tan"], ["馬場", "Racecourse"], ["沙田", "Sha Tin"], ["大圍", "Tai Wai"], ["九龍塘", "Kowloon Tong"], ["旺角東", "Mong Kok East"], ["紅磡", "Hung Hom"], ["尖東", "East Tsim Sha Tsui"], ["會展", "Exhibition Centre"], ["金鐘", "Admiralty"]]}, "tm1": {"title": "屯馬線（烏溪沙 → 土瓜灣）Tuen Ma Line (Wu Kai Sha → To Kwa Wan)", "items": [["烏溪沙", "Wu Kai Sha"], ["馬鞍山", "Ma On Shan"], ["恆安", "Heng On"], ["大水坑", "Tai Shui Hang"], ["石門", "Shek Mun"], ["第一城", "City One"], ["沙田圍", "Sha Tin Wai"], ["車公廟", "Che Kung Temple"], ["大圍", "Tai Wai"], ["顯徑", "Hin Keng"], ["鑽石山", "Diamond Hill"], ["啟德", "Kai Tak"], ["宋皇臺", "Sung Wong Toi"], ["土瓜灣", "To Kwa Wan"]]}, "tm2": {"title": "屯馬線（黃埔 → 屯門）Tuen Ma Line (Whampoa → Tuen Mun)", "items": [["黃埔", "Whampoa"], ["何文田", "Ho Man Tin"], ["紅磡", "Hung Hom"], ["尖沙咀", "Tsim Sha Tsui"], ["柯士甸", "Austin"], ["南昌", "Nam Cheong"], ["美孚", "Mei Foo"], ["荃灣西", "Tsuen Wan West"], ["錦上路", "Kam Sheung Road"], ["元朗", "Yuen Long"], ["朗屏", "Long Ping"], ["天水圍", "Tin Shui Wai"], ["兆康", "Siu Hong"], ["屯門", "Tuen Mun"]]}}, "quiz": [{"en": "January", "zh": "一月", "zh_full": "一月", "cat": "月份"}, {"en": "February", "zh": "二月", "zh_full": "二月", "cat": "月份"}, {"en": "March", "zh": "三月", "zh_full": "三月", "cat": "月份"}, {"en": "April", "zh": "四月", "zh_full": "四月", "cat": "月份"}, {"en": "May", "zh": "五月", "zh_full": "五月", "cat": "月份"}, {"en": "June", "zh": "六月", "zh_full": "六月", "cat": "月份"}, {"en": "July", "zh": "七月", "zh_full": "七月", "cat": "月份"}, {"en": "August", "zh": "八月", "zh_full": "八月", "cat": "月份"}, {"en": "September", "zh": "九月", "zh_full": "九月", "cat": "月份"}, {"en": "October", "zh": "十月", "zh_full": "十月", "cat": "月份"}, {"en": "November", "zh": "十一月", "zh_full": "十一月", "cat": "月份"}, {"en": "December", "zh": "十二月", "zh_full": "十二月", "cat": "月份"}, {"en": "Spring", "zh": "春", "zh_full": "春", "cat": "四季"}, {"en": "Summer", "zh": "夏", "zh_full": "夏", "cat": "四季"}, {"en": "Autumn / Fall", "zh": "秋", "zh_full": "秋", "cat": "四季"}, {"en": "Winter", "zh": "冬", "zh_full": "冬", "cat": "四季"}, {"en": "daily", "zh": "每天", "zh_full": "每天", "cat": "時間頻率"}, {"en": "weekly", "zh": "每週", "zh_full": "每週", "cat": "時間頻率"}, {"en": "monthly / once a month", "zh": "每月一次", "zh_full": "每月一次", "cat": "時間頻率"}, {"en": "seasonally", "zh": "每季", "zh_full": "每季", "cat": "時間頻率"}, {"en": "annually / every year", "zh": "每年", "zh_full": "每年", "cat": "時間頻率"}, {"en": "Sunday", "zh": "星期日", "zh_full": "星期日", "cat": "星期"}, {"en": "Monday", "zh": "星期一", "zh_full": "星期一", "cat": "星期"}, {"en": "Tuesday", "zh": "星期二", "zh_full": "星期二", "cat": "星期"}, {"en": "Wednesday", "zh": "星期三", "zh_full": "星期三", "cat": "星期"}, {"en": "Thursday", "zh": "星期四", "zh_full": "星期四", "cat": "星期"}, {"en": "Friday", "zh": "星期五", "zh_full": "星期五", "cat": "星期"}, {"en": "Saturday", "zh": "星期六", "zh_full": "星期六", "cat": "星期"}, {"en": "Sprint", "zh": "短跑", "zh_full": "短跑", "cat": "運動"}, {"en": "Hurdle", "zh": "跨欄", "zh_full": "跨欄", "cat": "運動"}, {"en": "Hockey", "zh": "曲棍球", "zh_full": "曲棍球", "cat": "運動"}, {"en": "Baseball", "zh": "棒球", "zh_full": "棒球", "cat": "運動"}, {"en": "Marathon", "zh": "馬拉松", "zh_full": "馬拉松", "cat": "運動"}, {"en": "Javelin Throw", "zh": "標槍", "zh_full": "標槍", "cat": "運動"}, {"en": "Kendo", "zh": "劍道", "zh_full": "劍道", "cat": "運動"}, {"en": "Archery", "zh": "射箭", "zh_full": "射箭", "cat": "運動"}, {"en": "Gymnastics", "zh": "體操", "zh_full": "體操", "cat": "運動"}, {"en": "Aerobics", "zh": "有氧運動", "zh_full": "有氧運動", "cat": "運動"}, {"en": "Martial arts", "zh": "武術", "zh_full": "武術", "cat": "運動"}, {"en": "Boxing", "zh": "拳擊", "zh_full": "拳擊", "cat": "運動"}, {"en": "Karate", "zh": "空手道", "zh_full": "空手道", "cat": "運動"}, {"en": "Judo", "zh": "柔道", "zh_full": "柔道", "cat": "運動"}, {"en": "Relay", "zh": "接力", "zh_full": "接力", "cat": "運動"}, {"en": "Tai Chi", "zh": "太極", "zh_full": "太極", "cat": "運動"}, {"en": "Weight Lifting", "zh": "舉重", "zh_full": "舉重", "cat": "運動"}, {"en": "Accountant", "zh": "會計師", "zh_full": "會計師", "cat": "職業"}, {"en": "Adviser / Advisor", "zh": "顧問", "zh_full": "顧問", "cat": "職業"}, {"en": "Artist", "zh": "藝術家", "zh_full": "藝術家", "cat": "職業"}, {"en": "Celebrity", "zh": "名人", "zh_full": "名人", "cat": "職業"}, {"en": "Chemist", "zh": "化學家", "zh_full": "化學家", "cat": "職業"}, {"en": "Dietician", "zh": "營養師", "zh_full": "營養師", "cat": "職業"}, {"en": "Real estate agent", "zh": "房地產經紀人", "zh_full": "房地產經紀人", "cat": "職業"}, {"en": "Politician", "zh": "政治家", "zh_full": "政治家", "cat": "職業"}, {"en": "Entrepreneur", "zh": "企業家", "zh_full": "企業家", "cat": "職業"}, {"en": "Hairstylist", "zh": "髮型師", "zh_full": "髮型師", "cat": "職業"}, {"en": "Barrister", "zh": "大律師", "zh_full": "大律師", "cat": "職業"}, {"en": "Attorney / Lawyer", "zh": "律師", "zh_full": "律師", "cat": "職業"}, {"en": "Auditor", "zh": "審計師", "zh_full": "審計師", "cat": "職業"}, {"en": "Practitioner", "zh": "從業者", "zh_full": "從業者", "cat": "職業"}, {"en": "Pharmacist", "zh": "藥劑師", "zh_full": "藥劑師", "cat": "職業"}, {"en": "Architect", "zh": "建築師", "zh_full": "建築師", "cat": "職業"}, {"en": "Pilot", "zh": "飛行員", "zh_full": "飛行員", "cat": "職業"}, {"en": "Hawker", "zh": "小販", "zh_full": "小販", "cat": "職業"}, {"en": "Librarian", "zh": "圖書管理員", "zh_full": "圖書管理員", "cat": "職業"}, {"en": "Photographer", "zh": "攝影師", "zh_full": "攝影師", "cat": "職業"}, {"en": "Consultant", "zh": "顧問", "zh_full": "顧問", "cat": "職業"}, {"en": "Salesperson", "zh": "銷售員", "zh_full": "銷售員", "cat": "職業"}, {"en": "Bodyguard", "zh": "保鏢", "zh_full": "保鏢", "cat": "職業"}, {"en": "Calligrapher", "zh": "書法家", "zh_full": "書法家", "cat": "職業"}, {"en": "Composer", "zh": "作曲家", "zh_full": "作曲家", "cat": "職業"}, {"en": "Clerk", "zh": "文員", "zh_full": "文員", "cat": "職業"}, {"en": "Computer engineer", "zh": "電腦工程師", "zh_full": "電腦工程師", "cat": "職業"}, {"en": "Programmer", "zh": "程序員", "zh_full": "程序員", "cat": "職業"}, {"en": "Editor", "zh": "編輯", "zh_full": "編輯", "cat": "職業"}, {"en": "each / every", "zh": "每個", "zh_full": "每個", "cat": "計量與數量"}, {"en": "most / a majority of", "zh": "大部份", "zh_full": "大部份", "cat": "計量與數量"}, {"en": "a lot of / many / much", "zh": "很多", "zh_full": "很多", "cat": "計量與數量"}, {"en": "different kinds of / various", "zh": "不同種類", "zh_full": "不同種類", "cat": "計量與數量"}, {"en": "some / a few / a little", "zh": "有些", "zh_full": "有些", "cat": "計量與數量"}, {"en": "a minority", "zh": "小部分", "zh_full": "小部分", "cat": "計量與數量"}, {"en": "few / little", "zh": "少", "zh_full": "少", "cat": "計量與數量"}, {"en": "no / none", "zh": "沒有", "zh_full": "沒有", "cat": "計量與數量"}, {"en": "millions of", "zh": "數以百萬計", "zh_full": "數以百萬計", "cat": "計量與數量"}, {"en": "thousands of", "zh": "數以千計", "zh_full": "數以千計", "cat": "計量與數量"}, {"en": "hundreds of", "zh": "數以百計", "zh_full": "數以百計", "cat": "計量與數量"}, {"en": "triple / 3 times", "zh": "3 倍", "zh_full": "3 倍", "cat": "計量與數量"}, {"en": "double", "zh": "2 倍", "zh_full": "2 倍", "cat": "計量與數量"}, {"en": "a couple of / a pair of", "zh": "兩個 / 一對", "zh_full": "兩個 / 一對", "cat": "計量與數量"}, {"en": "three quarters", "zh": "四分之三", "zh_full": "四分之三", "cat": "計量與數量"}, {"en": "half", "zh": "一半", "zh_full": "一半", "cat": "計量與數量"}, {"en": "one-third", "zh": "三分之一", "zh_full": "三分之一", "cat": "計量與數量"}, {"en": "a quarter", "zh": "四分之一", "zh_full": "四分之一", "cat": "計量與數量"}, {"en": "one-fifth", "zh": "五分之一", "zh_full": "五分之一", "cat": "計量與數量"}, {"en": "percent (%)", "zh": "百分比", "zh_full": "百分比", "cat": "計量與數量"}, {"en": "more than / over", "zh": "超過", "zh_full": "超過", "cat": "計量與數量"}, {"en": "both", "zh": "兩者皆是", "zh_full": "兩者皆是", "cat": "計量與數量"}, {"en": "another", "zh": "另一", "zh_full": "另一", "cat": "計量與數量"}, {"en": "other", "zh": "其他", "zh_full": "其他", "cat": "計量與數量"}, {"en": "once", "zh": "一次", "zh_full": "一次", "cat": "計量與數量"}, {"en": "twice", "zh": "兩次", "zh_full": "兩次", "cat": "計量與數量"}, {"en": "three times", "zh": "三次", "zh_full": "三次", "cat": "計量與數量"}, {"en": "approximately / about", "zh": "大約", "zh_full": "大約", "cat": "計量與數量"}, {"en": "nearly / almost", "zh": "差不多", "zh_full": "差不多", "cat": "計量與數量"}, {"en": "exactly", "zh": "正是", "zh_full": "正是", "cat": "計量與數量"}, {"en": "less / fewer", "zh": "較少", "zh_full": "較少", "cat": "計量與數量"}, {"en": "maximum", "zh": "最大", "zh_full": "最大", "cat": "計量與數量"}, {"en": "minimum", "zh": "最小", "zh_full": "最小", "cat": "計量與數量"}, {"en": "sole / unique", "zh": "唯一 / 獨一無二", "zh_full": "唯一 / 獨一無二", "cat": "計量與數量"}, {"en": "increase / rise / go up", "zh": "增加", "zh_full": "增加", "cat": "計量與數量"}, {"en": "decrease / drop / reduce", "zh": "減少", "zh_full": "減少", "cat": "計量與數量"}, {"en": "kilometres (km)", "zh": "公里", "zh_full": "公里", "cat": "計量與數量"}, {"en": "metres (m)", "zh": "米", "zh_full": "米", "cat": "計量與數量"}, {"en": "centimetres (cm)", "zh": "厘米", "zh_full": "厘米", "cat": "計量與數量"}, {"en": "kilograms (kg)", "zh": "公斤", "zh_full": "公斤", "cat": "計量與數量"}, {"en": "grams (g)", "zh": "克", "zh_full": "克", "cat": "計量與數量"}, {"en": "average", "zh": "平均", "zh_full": "平均", "cat": "計量與數量"}, {"en": "total", "zh": "總共", "zh_full": "總共", "cat": "計量與數量"}, {"en": "seconds (s)", "zh": "秒", "zh_full": "秒", "cat": "時間"}, {"en": "minutes (min)", "zh": "分鐘", "zh_full": "分鐘", "cat": "時間"}, {"en": "hours (h)", "zh": "小時", "zh_full": "小時", "cat": "時間"}, {"en": "days", "zh": "日", "zh_full": "日", "cat": "時間"}, {"en": "date", "zh": "日期", "zh_full": "日期", "cat": "時間"}, {"en": "weekdays", "zh": "平日", "zh_full": "平日", "cat": "時間"}, {"en": "weeks", "zh": "星期", "zh_full": "星期", "cat": "時間"}, {"en": "weekends", "zh": "周末", "zh_full": "周末", "cat": "時間"}, {"en": "month", "zh": "月", "zh_full": "月", "cat": "時間"}, {"en": "year", "zh": "年", "zh_full": "年", "cat": "時間"}, {"en": "annually", "zh": "每年", "zh_full": "每年", "cat": "時間"}, {"en": "decade", "zh": "十年", "zh_full": "十年", "cat": "時間"}, {"en": "century", "zh": "世紀", "zh_full": "世紀", "cat": "時間"}, {"en": "previous / last", "zh": "之前的 / 上一個", "zh_full": "之前的 / 上一個", "cat": "時間"}, {"en": "next / following", "zh": "下一個 / 接著的", "zh_full": "下一個 / 接著的", "cat": "時間"}, {"en": "yesterday", "zh": "昨天", "zh_full": "昨天", "cat": "時間"}, {"en": "today", "zh": "今天", "zh_full": "今天", "cat": "時間"}, {"en": "tomorrow", "zh": "明天", "zh_full": "明天", "cat": "時間"}, {"en": "ago", "zh": "以前", "zh_full": "以前", "cat": "時間"}, {"en": "ancient", "zh": "古代的", "zh_full": "古代的", "cat": "時間"}, {"en": "China", "zh": "中國", "zh_full": "中國", "cat": "國家與城市"}, {"en": "Beijing", "zh": "北京", "zh_full": "北京", "cat": "國家與城市"}, {"en": "Shanghai", "zh": "上海", "zh_full": "上海", "cat": "國家與城市"}, {"en": "Shenzhen", "zh": "深圳", "zh_full": "深圳", "cat": "國家與城市"}, {"en": "Guangzhou", "zh": "廣州", "zh_full": "廣州", "cat": "國家與城市"}, {"en": "Canada", "zh": "加拿大", "zh_full": "加拿大", "cat": "國家與城市"}, {"en": "Toronto", "zh": "多倫多", "zh_full": "多倫多", "cat": "國家與城市"}, {"en": "Vancouver", "zh": "溫哥華", "zh_full": "溫哥華", "cat": "國家與城市"}, {"en": "Australia", "zh": "澳洲", "zh_full": "澳洲", "cat": "國家與城市"}, {"en": "Sydney", "zh": "悉尼", "zh_full": "悉尼", "cat": "國家與城市"}, {"en": "Melbourne", "zh": "墨爾本", "zh_full": "墨爾本", "cat": "國家與城市"}, {"en": "The USA", "zh": "美國", "zh_full": "美國", "cat": "國家與城市"}, {"en": "New York", "zh": "紐約", "zh_full": "紐約", "cat": "國家與城市"}, {"en": "Los Angeles", "zh": "洛杉磯", "zh_full": "洛杉磯", "cat": "國家與城市"}, {"en": "California", "zh": "加州", "zh_full": "加州", "cat": "國家與城市"}, {"en": "Thailand", "zh": "泰國", "zh_full": "泰國", "cat": "國家與城市"}, {"en": "Bangkok", "zh": "曼谷", "zh_full": "曼谷", "cat": "國家與城市"}, {"en": "Malaysia", "zh": "馬來西亞", "zh_full": "馬來西亞", "cat": "國家與城市"}, {"en": "Kuala Lumpur", "zh": "吉隆坡", "zh_full": "吉隆坡", "cat": "國家與城市"}, {"en": "Philippines", "zh": "菲律賓", "zh_full": "菲律賓", "cat": "國家與城市"}, {"en": "Singapore", "zh": "新加坡", "zh_full": "新加坡", "cat": "國家與城市"}, {"en": "Korea", "zh": "韓國", "zh_full": "韓國", "cat": "國家與城市"}, {"en": "Seoul", "zh": "首爾", "zh_full": "首爾", "cat": "國家與城市"}, {"en": "Japan", "zh": "日本", "zh_full": "日本", "cat": "國家與城市"}, {"en": "Tokyo", "zh": "東京", "zh_full": "東京", "cat": "國家與城市"}, {"en": "Osaka", "zh": "大阪", "zh_full": "大阪", "cat": "國家與城市"}, {"en": "Taiwan", "zh": "台灣", "zh_full": "台灣", "cat": "國家與城市"}, {"en": "Italy", "zh": "意大利", "zh_full": "意大利", "cat": "國家與城市"}, {"en": "Rome", "zh": "羅馬", "zh_full": "羅馬", "cat": "國家與城市"}, {"en": "France", "zh": "法國", "zh_full": "法國", "cat": "國家與城市"}, {"en": "Paris", "zh": "巴黎", "zh_full": "巴黎", "cat": "國家與城市"}, {"en": "Germany", "zh": "德國", "zh_full": "德國", "cat": "國家與城市"}, {"en": "Berlin", "zh": "柏林", "zh_full": "柏林", "cat": "國家與城市"}, {"en": "Britain / UK", "zh": "英國", "zh_full": "英國", "cat": "國家與城市"}, {"en": "London", "zh": "倫敦", "zh_full": "倫敦", "cat": "國家與城市"}, {"en": "Spain", "zh": "西班牙", "zh_full": "西班牙", "cat": "國家與城市"}, {"en": "Russia", "zh": "俄羅斯", "zh_full": "俄羅斯", "cat": "國家與城市"}, {"en": "Brazil", "zh": "巴西", "zh_full": "巴西", "cat": "國家與城市"}, {"en": "New Zealand", "zh": "紐西蘭", "zh_full": "紐西蘭", "cat": "國家與城市"}, {"en": "Austria", "zh": "奧地利", "zh_full": "奧地利", "cat": "國家與城市"}, {"en": "Switzerland", "zh": "瑞士", "zh_full": "瑞士", "cat": "國家與城市"}, {"en": "Asia", "zh": "亞洲", "zh_full": "亞洲", "cat": "國家與城市"}, {"en": "Europe", "zh": "歐洲", "zh_full": "歐洲", "cat": "國家與城市"}, {"en": "Africa", "zh": "非洲", "zh_full": "非洲", "cat": "國家與城市"}, {"en": "Chinese", "zh": "中國籍", "zh_full": "中國籍", "cat": "國籍"}, {"en": "American", "zh": "美籍", "zh_full": "美籍", "cat": "國籍"}, {"en": "British", "zh": "英國籍", "zh_full": "英國籍", "cat": "國籍"}, {"en": "Canadian", "zh": "加拿大籍", "zh_full": "加拿大籍", "cat": "國籍"}, {"en": "Australian", "zh": "澳洲籍", "zh_full": "澳洲籍", "cat": "國籍"}, {"en": "Japanese", "zh": "日本籍", "zh_full": "日本籍", "cat": "國籍"}, {"en": "Korean", "zh": "韓國籍", "zh_full": "韓國籍", "cat": "國籍"}, {"en": "French", "zh": "法國籍", "zh_full": "法國籍", "cat": "國籍"}, {"en": "German", "zh": "德國籍", "zh_full": "德國籍", "cat": "國籍"}, {"en": "Italian", "zh": "意大利籍", "zh_full": "意大利籍", "cat": "國籍"}, {"en": "Spanish", "zh": "西班牙籍", "zh_full": "西班牙籍", "cat": "國籍"}, {"en": "Thai", "zh": "泰國籍", "zh_full": "泰國籍", "cat": "國籍"}, {"en": "Malaysian", "zh": "馬來西亞籍", "zh_full": "馬來西亞籍", "cat": "國籍"}, {"en": "Singaporean", "zh": "新加坡籍", "zh_full": "新加坡籍", "cat": "國籍"}, {"en": "Filipino", "zh": "菲律賓籍", "zh_full": "菲律賓籍", "cat": "國籍"}, {"en": "Taiwanese", "zh": "台灣籍", "zh_full": "台灣籍", "cat": "國籍"}, {"en": "Indian", "zh": "印度籍", "zh_full": "印度籍", "cat": "國籍"}, {"en": "Russian", "zh": "俄羅斯籍", "zh_full": "俄羅斯籍", "cat": "國籍"}, {"en": "Brazilian", "zh": "巴西籍", "zh_full": "巴西籍", "cat": "國籍"}, {"en": "Swiss", "zh": "瑞士籍", "zh_full": "瑞士籍", "cat": "國籍"}, {"en": "Austrian", "zh": "奧地利籍", "zh_full": "奧地利籍", "cat": "國籍"}, {"en": "The Peak", "zh": "山頂", "zh_full": "山頂", "cat": "香港旅遊景點"}, {"en": "Ocean Park", "zh": "海洋公園", "zh_full": "海洋公園", "cat": "香港旅遊景點"}, {"en": "Disneyland", "zh": "迪士尼", "zh_full": "迪士尼", "cat": "香港旅遊景點"}, {"en": "Avenue of Stars", "zh": "星光大道", "zh_full": "星光大道", "cat": "香港旅遊景點"}, {"en": "Golden Bauhinia Square", "zh": "金紫荊廣場", "zh_full": "金紫荊廣場", "cat": "香港旅遊景點"}, {"en": "Big Buddha", "zh": "天壇大佛", "zh_full": "天壇大佛", "cat": "香港旅遊景點"}, {"en": "Po Lin Monastery", "zh": "寶蓮寺", "zh_full": "寶蓮寺", "cat": "香港旅遊景點"}, {"en": "Repulse Bay", "zh": "淺水灣", "zh_full": "淺水灣", "cat": "香港旅遊景點"}, {"en": "Temple Street", "zh": "廟街", "zh_full": "廟街", "cat": "香港旅遊景點"}, {"en": "Lan Kwai Fong", "zh": "蘭桂坊", "zh_full": "蘭桂坊", "cat": "香港旅遊景點"}, {"en": "Times Square", "zh": "時代廣場", "zh_full": "時代廣場", "cat": "香港旅遊景點"}, {"en": "Star Ferry Pier", "zh": "天星碼頭", "zh_full": "天星碼頭", "cat": "香港旅遊景點"}, {"en": "Tsing Ma Bridge", "zh": "青馬大橋", "zh_full": "青馬大橋", "cat": "香港旅遊景點"}, {"en": "Hong Kong Coliseum", "zh": "紅館", "zh_full": "紅館", "cat": "香港旅遊景點"}, {"en": "Victoria Park", "zh": "維多利亞公園", "zh_full": "維多利亞公園", "cat": "香港旅遊景點"}, {"en": "Science Museum", "zh": "科學館", "zh_full": "科學館", "cat": "香港旅遊景點"}, {"en": "Space Museum", "zh": "太空館", "zh_full": "太空館", "cat": "香港旅遊景點"}, {"en": "Hong Kong Cultural Centre", "zh": "香港文化中心", "zh_full": "香港文化中心", "cat": "香港旅遊景點"}, {"en": "Chek Lap Kok Airport", "zh": "赤鱲角機場", "zh_full": "赤鱲角機場", "cat": "香港旅遊景點"}, {"en": "Ladies' Street", "zh": "女人街", "zh_full": "女人街", "cat": "香港旅遊景點"}, {"en": "research", "zh": "研究", "zh_full": "研究", "cat": "研究與報告"}, {"en": "survey", "zh": "調查", "zh_full": "調查", "cat": "研究與報告"}, {"en": "questionnaire", "zh": "問卷", "zh_full": "問卷", "cat": "研究與報告"}, {"en": "interview", "zh": "訪問", "zh_full": "訪問", "cat": "研究與報告"}, {"en": "case study", "zh": "個案研究", "zh_full": "個案研究", "cat": "研究與報告"}, {"en": "project", "zh": "專題研習", "zh_full": "專題研習", "cat": "研究與報告"}, {"en": "presentation", "zh": "報告 / 簡報", "zh_full": "報告 / 簡報", "cat": "研究與報告"}, {"en": "PowerPoint slides", "zh": "投影片", "zh_full": "投影片", "cat": "研究與報告"}, {"en": "charts and tables", "zh": "圖表", "zh_full": "圖表", "cat": "研究與報告"}, {"en": "library", "zh": "圖書館", "zh_full": "圖書館", "cat": "研究與報告"}, {"en": "the Internet / online", "zh": "互聯網 / 網上", "zh_full": "互聯網 / 網上", "cat": "研究與報告"}, {"en": "newspaper articles", "zh": "報紙文章", "zh_full": "報紙文章", "cat": "研究與報告"}, {"en": "document", "zh": "文件", "zh_full": "文件", "cat": "研究與報告"}, {"en": "video clips", "zh": "影片", "zh_full": "影片", "cat": "研究與報告"}, {"en": "digital photos", "zh": "數碼相片", "zh_full": "數碼相片", "cat": "研究與報告"}, {"en": "left / right", "zh": "左 / 右", "zh_full": "左 / 右", "cat": "方向"}, {"en": "top left / top right", "zh": "左上角 / 右上角", "zh_full": "左上角 / 右上角", "cat": "方向"}, {"en": "bottom left / bottom right", "zh": "左下角 / 右下角", "zh_full": "左下角 / 右下角", "cat": "方向"}, {"en": "row / column", "zh": "橫行 / 直行", "zh_full": "橫行 / 直行", "cat": "方向"}, {"en": "east / south / west / north", "zh": "東 / 南 / 西 / 北", "zh_full": "東 / 南 / 西 / 北", "cat": "方向"}, {"en": "northeast / southeast", "zh": "東北 / 東南", "zh_full": "東北 / 東南", "cat": "方向"}, {"en": "southwest / northwest", "zh": "西南 / 西北", "zh_full": "西南 / 西北", "cat": "方向"}, {"en": "triangle", "zh": "三角形", "zh_full": "三角形", "cat": "幾何與形狀"}, {"en": "square", "zh": "正方形", "zh_full": "正方形", "cat": "幾何與形狀"}, {"en": "rectangle", "zh": "長方形", "zh_full": "長方形", "cat": "幾何與形狀"}, {"en": "circle / round", "zh": "圓形", "zh_full": "圓形", "cat": "幾何與形狀"}, {"en": "oval", "zh": "鵝蛋形", "zh_full": "鵝蛋形", "cat": "幾何與形狀"}, {"en": "star", "zh": "星形", "zh_full": "星形", "cat": "幾何與形狀"}, {"en": "heart", "zh": "心形", "zh_full": "心形", "cat": "幾何與形狀"}, {"en": "diamond", "zh": "菱形", "zh_full": "菱形", "cat": "幾何與形狀"}, {"en": "sphere", "zh": "球體", "zh_full": "球體", "cat": "幾何與形狀"}, {"en": "cylinder", "zh": "圓柱形", "zh_full": "圓柱形", "cat": "幾何與形狀"}, {"en": "cone", "zh": "圓錐形", "zh_full": "圓錐形", "cat": "幾何與形狀"}, {"en": "cube", "zh": "方體", "zh_full": "方體", "cat": "幾何與形狀"}, {"en": "straight / curved / wavy line", "zh": "直線 / 曲線 / 波浪線", "zh_full": "直線 / 曲線 / 波浪線", "cat": "幾何與形狀"}, {"en": "dotted / broken line", "zh": "點線 / 虛線", "zh_full": "點線 / 虛線", "cat": "幾何與形狀"}, {"en": "arrow", "zh": "箭咀", "zh_full": "箭咀", "cat": "幾何與形狀"}, {"en": "tick / check", "zh": "剔號", "zh_full": "剔號", "cat": "幾何與形狀"}, {"en": "cross", "zh": "交叉", "zh_full": "交叉", "cat": "幾何與形狀"}, {"en": "question mark", "zh": "問號", "zh_full": "問號", "cat": "幾何與形狀"}, {"en": "Pharmacy", "zh": "藥房", "zh_full": "n. 藥房", "cat": "健康"}, {"en": "Pharmacist", "zh": "藥劑師", "zh_full": "n. 藥劑師", "cat": "健康"}, {"en": "First aid", "zh": "急救", "zh_full": "phr. 急救", "cat": "健康"}, {"en": "Prescription", "zh": "處方", "zh_full": "n. 處方", "cat": "健康"}, {"en": "Injection", "zh": "注射", "zh_full": "n. 注射", "cat": "健康"}, {"en": "Side effect", "zh": "副作用", "zh_full": "phr. 副作用", "cat": "健康"}, {"en": "Vaccine / Vaccination", "zh": "疫苗 / 接種", "zh_full": "n. 疫苗 / 接種", "cat": "健康"}, {"en": "Antibiotics", "zh": "抗生素", "zh_full": "n. 抗生素", "cat": "健康"}, {"en": "Infection", "zh": "感染", "zh_full": "n. 感染", "cat": "健康"}, {"en": "Vitamins", "zh": "維他命", "zh_full": "n. 維他命", "cat": "健康"}, {"en": "X-ray", "zh": "X 光", "zh_full": "n. X 光", "cat": "健康"}, {"en": "Therapy", "zh": "療程", "zh_full": "n. 療程", "cat": "健康"}, {"en": "Apartment", "zh": "公寓", "zh_full": "n. 公寓", "cat": "家居"}, {"en": "Accommodation", "zh": "住宿", "zh_full": "n. 住宿", "cat": "家居"}, {"en": "Living room", "zh": "客廳", "zh_full": "phr. 客廳", "cat": "家居"}, {"en": "Ceiling", "zh": "天花", "zh_full": "n. 天花", "cat": "家居"}, {"en": "Storey", "zh": "樓層", "zh_full": "n. 樓層", "cat": "家居"}, {"en": "Bookshelf", "zh": "書櫃", "zh_full": "n. 書櫃", "cat": "家居"}, {"en": "Vacuum cleaner", "zh": "吸塵機", "zh_full": "phr. 吸塵機", "cat": "家居"}, {"en": "Toaster", "zh": "多士爐", "zh_full": "n. 多士爐", "cat": "家居"}, {"en": "Cushion", "zh": "坐墊", "zh_full": "n. 坐墊", "cat": "家居"}, {"en": "Doormat", "zh": "地墊", "zh_full": "n. 地墊", "cat": "家居"}, {"en": "Shoe cabinet", "zh": "鞋架", "zh_full": "phr. 鞋架", "cat": "家居"}, {"en": "TV stand", "zh": "電視櫃", "zh_full": "phr. 電視櫃", "cat": "家居"}, {"en": "Whampoa", "zh": "黃埔", "zh_full": "黃埔", "cat": "地鐵站名"}, {"en": "Ho Man Tin", "zh": "何文田", "zh_full": "何文田", "cat": "地鐵站名"}, {"en": "Yau Ma Tei", "zh": "油麻地", "zh_full": "油麻地", "cat": "地鐵站名"}, {"en": "Mong Kok", "zh": "旺角", "zh_full": "旺角", "cat": "地鐵站名"}, {"en": "Prince Edward", "zh": "太子", "zh_full": "太子", "cat": "地鐵站名"}, {"en": "Shek Kip Mei", "zh": "石硤尾", "zh_full": "石硤尾", "cat": "地鐵站名"}, {"en": "Kowloon Tong", "zh": "九龍塘", "zh_full": "九龍塘", "cat": "地鐵站名"}, {"en": "Lok Fu", "zh": "樂富", "zh_full": "樂富", "cat": "地鐵站名"}, {"en": "Wong Tai Sin", "zh": "黃大仙", "zh_full": "黃大仙", "cat": "地鐵站名"}, {"en": "Diamond Hill", "zh": "鑽石山", "zh_full": "鑽石山", "cat": "地鐵站名"}, {"en": "Choi Hung", "zh": "彩虹", "zh_full": "彩虹", "cat": "地鐵站名"}, {"en": "Kowloon Bay", "zh": "九龍灣", "zh_full": "九龍灣", "cat": "地鐵站名"}, {"en": "Ngau Tau Kok", "zh": "牛頭角", "zh_full": "牛頭角", "cat": "地鐵站名"}, {"en": "Kwun Tong", "zh": "觀塘", "zh_full": "觀塘", "cat": "地鐵站名"}, {"en": "Lam Tin", "zh": "藍田", "zh_full": "藍田", "cat": "地鐵站名"}, {"en": "Yau Tong", "zh": "油塘", "zh_full": "油塘", "cat": "地鐵站名"}, {"en": "Tiu Keng Leng", "zh": "調景嶺", "zh_full": "調景嶺", "cat": "地鐵站名"}, {"en": "Tsuen Wan", "zh": "荃灣", "zh_full": "荃灣", "cat": "地鐵站名"}, {"en": "Tai Wo Hau", "zh": "大窩口", "zh_full": "大窩口", "cat": "地鐵站名"}, {"en": "Kwai Hing", "zh": "葵興", "zh_full": "葵興", "cat": "地鐵站名"}, {"en": "Kwai Fong", "zh": "葵芳", "zh_full": "葵芳", "cat": "地鐵站名"}, {"en": "Lai King", "zh": "荔景", "zh_full": "荔景", "cat": "地鐵站名"}, {"en": "Lai Chi Kok", "zh": "荔枝角", "zh_full": "荔枝角", "cat": "地鐵站名"}, {"en": "Mei Foo", "zh": "美孚", "zh_full": "美孚", "cat": "地鐵站名"}, {"en": "Cheung Sha Wan", "zh": "長沙灣", "zh_full": "長沙灣", "cat": "地鐵站名"}, {"en": "Sham Shui Po", "zh": "深水埗", "zh_full": "深水埗", "cat": "地鐵站名"}, {"en": "Prince Edward", "zh": "太子", "zh_full": "太子", "cat": "地鐵站名"}, {"en": "Mong Kok", "zh": "旺角", "zh_full": "旺角", "cat": "地鐵站名"}, {"en": "Yau Ma Tei", "zh": "油麻地", "zh_full": "油麻地", "cat": "地鐵站名"}, {"en": "Jordan", "zh": "佐敦", "zh_full": "佐敦", "cat": "地鐵站名"}, {"en": "Tsim Sha Tsui", "zh": "尖沙咀", "zh_full": "尖沙咀", "cat": "地鐵站名"}, {"en": "Admiralty", "zh": "金鐘", "zh_full": "金鐘", "cat": "地鐵站名"}, {"en": "Central", "zh": "中環", "zh_full": "中環", "cat": "地鐵站名"}, {"en": "Kennedy Town", "zh": "堅尼地城", "zh_full": "堅尼地城", "cat": "地鐵站名"}, {"en": "HKU", "zh": "香港大學", "zh_full": "香港大學", "cat": "地鐵站名"}, {"en": "Sai Ying Pun", "zh": "西營盤", "zh_full": "西營盤", "cat": "地鐵站名"}, {"en": "Sheung Wan", "zh": "上環", "zh_full": "上環", "cat": "地鐵站名"}, {"en": "Central", "zh": "中環", "zh_full": "中環", "cat": "地鐵站名"}, {"en": "Admiralty", "zh": "金鐘", "zh_full": "金鐘", "cat": "地鐵站名"}, {"en": "Wan Chai", "zh": "灣仔", "zh_full": "灣仔", "cat": "地鐵站名"}, {"en": "Causeway Bay", "zh": "銅鑼灣", "zh_full": "銅鑼灣", "cat": "地鐵站名"}, {"en": "Tin Hau", "zh": "天后", "zh_full": "天后", "cat": "地鐵站名"}, {"en": "Fortress Hill", "zh": "炮台山", "zh_full": "炮台山", "cat": "地鐵站名"}, {"en": "North Point", "zh": "北角", "zh_full": "北角", "cat": "地鐵站名"}, {"en": "Quarry Bay", "zh": "鰂魚涌", "zh_full": "鰂魚涌", "cat": "地鐵站名"}, {"en": "Tai Koo", "zh": "太古", "zh_full": "太古", "cat": "地鐵站名"}, {"en": "Sai Wan Ho", "zh": "西灣河", "zh_full": "西灣河", "cat": "地鐵站名"}, {"en": "Shau Kei Wan", "zh": "筲箕灣", "zh_full": "筲箕灣", "cat": "地鐵站名"}, {"en": "Heng Fa Chuen", "zh": "杏花邨", "zh_full": "杏花邨", "cat": "地鐵站名"}, {"en": "Chai Wan", "zh": "柴灣", "zh_full": "柴灣", "cat": "地鐵站名"}, {"en": "North Point", "zh": "北角", "zh_full": "北角", "cat": "地鐵站名"}, {"en": "Quarry Bay", "zh": "鰂魚涌", "zh_full": "鰂魚涌", "cat": "地鐵站名"}, {"en": "Yau Tong", "zh": "油塘", "zh_full": "油塘", "cat": "地鐵站名"}, {"en": "Tiu Keng Leng", "zh": "調景嶺", "zh_full": "調景嶺", "cat": "地鐵站名"}, {"en": "Tseung Kwan O", "zh": "將軍澳", "zh_full": "將軍澳", "cat": "地鐵站名"}, {"en": "Hang Hau", "zh": "坑口", "zh_full": "坑口", "cat": "地鐵站名"}, {"en": "Po Lam", "zh": "寶琳", "zh_full": "寶琳", "cat": "地鐵站名"}, {"en": "LOHAS Park", "zh": "康城", "zh_full": "康城", "cat": "地鐵站名"}, {"en": "Admiralty", "zh": "金鐘", "zh_full": "金鐘", "cat": "地鐵站名"}, {"en": "Ocean Park", "zh": "海洋公園", "zh_full": "海洋公園", "cat": "地鐵站名"}, {"en": "Wong Chuk Hang", "zh": "黃竹坑", "zh_full": "黃竹坑", "cat": "地鐵站名"}, {"en": "Lei Tung", "zh": "利東", "zh_full": "利東", "cat": "地鐵站名"}, {"en": "South Horizons", "zh": "海怡半島", "zh_full": "海怡半島", "cat": "地鐵站名"}, {"en": "Tung Chung", "zh": "東涌", "zh_full": "東涌", "cat": "地鐵站名"}, {"en": "Sunny Bay", "zh": "欣澳", "zh_full": "欣澳", "cat": "地鐵站名"}, {"en": "Disneyland Resort", "zh": "迪士尼", "zh_full": "迪士尼", "cat": "地鐵站名"}, {"en": "Tsing Yi", "zh": "青衣", "zh_full": "青衣", "cat": "地鐵站名"}, {"en": "Lai King", "zh": "荔景", "zh_full": "荔景", "cat": "地鐵站名"}, {"en": "Nam Cheong", "zh": "南昌", "zh_full": "南昌", "cat": "地鐵站名"}, {"en": "Olympic", "zh": "奧運", "zh_full": "奧運", "cat": "地鐵站名"}, {"en": "Kowloon", "zh": "九龍", "zh_full": "九龍", "cat": "地鐵站名"}, {"en": "Hong Kong", "zh": "香港", "zh_full": "香港", "cat": "地鐵站名"}, {"en": "Airport", "zh": "機場", "zh_full": "機場", "cat": "地鐵站名"}, {"en": "AsiaWorld-Expo", "zh": "博覽館", "zh_full": "博覽館", "cat": "地鐵站名"}, {"en": "Lok Ma Chau", "zh": "落馬洲", "zh_full": "落馬洲", "cat": "地鐵站名"}, {"en": "Lo Wu", "zh": "羅湖", "zh_full": "羅湖", "cat": "地鐵站名"}, {"en": "Sheung Shui", "zh": "上水", "zh_full": "上水", "cat": "地鐵站名"}, {"en": "Fanling", "zh": "粉嶺", "zh_full": "粉嶺", "cat": "地鐵站名"}, {"en": "Tai Wo", "zh": "太和", "zh_full": "太和", "cat": "地鐵站名"}, {"en": "Tai Po Market", "zh": "大埔墟", "zh_full": "大埔墟", "cat": "地鐵站名"}, {"en": "University", "zh": "大學", "zh_full": "大學", "cat": "地鐵站名"}, {"en": "Fo Tan", "zh": "火炭", "zh_full": "火炭", "cat": "地鐵站名"}, {"en": "Racecourse", "zh": "馬場", "zh_full": "馬場", "cat": "地鐵站名"}, {"en": "Sha Tin", "zh": "沙田", "zh_full": "沙田", "cat": "地鐵站名"}, {"en": "Tai Wai", "zh": "大圍", "zh_full": "大圍", "cat": "地鐵站名"}, {"en": "Kowloon Tong", "zh": "九龍塘", "zh_full": "九龍塘", "cat": "地鐵站名"}, {"en": "Mong Kok East", "zh": "旺角東", "zh_full": "旺角東", "cat": "地鐵站名"}, {"en": "Hung Hom", "zh": "紅磡", "zh_full": "紅磡", "cat": "地鐵站名"}, {"en": "East Tsim Sha Tsui", "zh": "尖東", "zh_full": "尖東", "cat": "地鐵站名"}, {"en": "Exhibition Centre", "zh": "會展", "zh_full": "會展", "cat": "地鐵站名"}, {"en": "Admiralty", "zh": "金鐘", "zh_full": "金鐘", "cat": "地鐵站名"}, {"en": "Wu Kai Sha", "zh": "烏溪沙", "zh_full": "烏溪沙", "cat": "地鐵站名"}, {"en": "Ma On Shan", "zh": "馬鞍山", "zh_full": "馬鞍山", "cat": "地鐵站名"}, {"en": "Heng On", "zh": "恆安", "zh_full": "恆安", "cat": "地鐵站名"}, {"en": "Tai Shui Hang", "zh": "大水坑", "zh_full": "大水坑", "cat": "地鐵站名"}, {"en": "Shek Mun", "zh": "石門", "zh_full": "石門", "cat": "地鐵站名"}, {"en": "City One", "zh": "第一城", "zh_full": "第一城", "cat": "地鐵站名"}, {"en": "Sha Tin Wai", "zh": "沙田圍", "zh_full": "沙田圍", "cat": "地鐵站名"}, {"en": "Che Kung Temple", "zh": "車公廟", "zh_full": "車公廟", "cat": "地鐵站名"}, {"en": "Tai Wai", "zh": "大圍", "zh_full": "大圍", "cat": "地鐵站名"}, {"en": "Hin Keng", "zh": "顯徑", "zh_full": "顯徑", "cat": "地鐵站名"}, {"en": "Diamond Hill", "zh": "鑽石山", "zh_full": "鑽石山", "cat": "地鐵站名"}, {"en": "Kai Tak", "zh": "啟德", "zh_full": "啟德", "cat": "地鐵站名"}, {"en": "Sung Wong Toi", "zh": "宋皇臺", "zh_full": "宋皇臺", "cat": "地鐵站名"}, {"en": "To Kwa Wan", "zh": "土瓜灣", "zh_full": "土瓜灣", "cat": "地鐵站名"}, {"en": "Whampoa", "zh": "黃埔", "zh_full": "黃埔", "cat": "地鐵站名"}, {"en": "Ho Man Tin", "zh": "何文田", "zh_full": "何文田", "cat": "地鐵站名"}, {"en": "Hung Hom", "zh": "紅磡", "zh_full": "紅磡", "cat": "地鐵站名"}, {"en": "Tsim Sha Tsui", "zh": "尖沙咀", "zh_full": "尖沙咀", "cat": "地鐵站名"}, {"en": "Austin", "zh": "柯士甸", "zh_full": "柯士甸", "cat": "地鐵站名"}, {"en": "Nam Cheong", "zh": "南昌", "zh_full": "南昌", "cat": "地鐵站名"}, {"en": "Mei Foo", "zh": "美孚", "zh_full": "美孚", "cat": "地鐵站名"}, {"en": "Tsuen Wan West", "zh": "荃灣西", "zh_full": "荃灣西", "cat": "地鐵站名"}, {"en": "Kam Sheung Road", "zh": "錦上路", "zh_full": "錦上路", "cat": "地鐵站名"}, {"en": "Yuen Long", "zh": "元朗", "zh_full": "元朗", "cat": "地鐵站名"}, {"en": "Long Ping", "zh": "朗屏", "zh_full": "朗屏", "cat": "地鐵站名"}, {"en": "Tin Shui Wai", "zh": "天水圍", "zh_full": "天水圍", "cat": "地鐵站名"}, {"en": "Siu Hong", "zh": "兆康", "zh_full": "兆康", "cat": "地鐵站名"}, {"en": "Tuen Mun", "zh": "屯門", "zh_full": "屯門", "cat": "地鐵站名"}]};
+
+(function () {
+  const body = document.body;
+  const search = document.getElementById('globalSearch');
+  const toggleZh = document.getElementById('toggleZh');
+  const emptyFilter = document.getElementById('emptyFilter');
+  const rows = Array.from(document.querySelectorAll('table.vocab tbody tr'));
+
+  toggleZh.addEventListener('click', () => {
+    const on = body.classList.toggle('hide-zh');
+    toggleZh.setAttribute('aria-pressed', on ? 'true' : 'false');
+    toggleZh.textContent = on ? '顯示中文' : '隱藏中文';
+  });
+
+  function applyFilter() {
+    const q = (search.value || '').trim().toLowerCase();
+    let visible = 0;
+    rows.forEach(tr => {
+      if (!q) {
+        tr.classList.remove('hidden');
+        visible++;
+        return;
+      }
+      const en = (tr.dataset.en || '').toLowerCase();
+      const zh = (tr.dataset.zh || '').toLowerCase();
+      const hit = en.includes(q) || zh.includes(q);
+      tr.classList.toggle('hidden', !hit);
+      if (hit) visible++;
+    });
+    // Hide section cards with no visible rows (except quiz / tips)
+    document.querySelectorAll('section.section').forEach(sec => {
+      const trs = sec.querySelectorAll('table.vocab tbody tr');
+      if (!trs.length) return;
+      const any = Array.from(trs).some(tr => !tr.classList.contains('hidden'));
+      sec.style.display = (!q || any) ? '' : 'none';
+    });
+    emptyFilter.classList.toggle('show', q && visible === 0);
+  }
+  search.addEventListener('input', applyFilter);
+
+  // ===== Quiz =====
+  const pool = DATA.quiz.slice();
+  let mode = 'en2zh-mc';
+  let score = 0, total = 0;
+  let current = null;
+  let answered = false;
+
+  const qPrompt = document.getElementById('qPrompt');
+  const qLabel = document.getElementById('qLabel');
+  const qCat = document.getElementById('qCat');
+  const qBody = document.getElementById('qBody');
+  const qFeedback = document.getElementById('qFeedback');
+  const qScore = document.getElementById('qScore');
+  const qTotal = document.getElementById('qTotal');
+  const qRate = document.getElementById('qRate');
+
+  document.querySelectorAll('.quiz-modes .btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.quiz-modes .btn').forEach(b => {
+        b.classList.remove('active');
+        b.classList.add('btn-ghost');
+        b.classList.remove('btn-secondary');
+      });
+      btn.classList.add('active');
+      btn.classList.remove('btn-ghost');
+      btn.classList.add('btn-secondary');
+      mode = btn.dataset.mode;
+      nextQuestion();
+    });
+  });
+
+  function updateStats() {
+    qScore.textContent = score;
+    qTotal.textContent = total;
+    qRate.textContent = total ? Math.round(score / total * 100) + '%' : '—';
+  }
+
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function pickWrong(item, key, n) {
+    const others = pool.filter(x => x[key] !== item[key]);
+    return shuffle(others).slice(0, n).map(x => x[key]);
+  }
+
+  function normalize(s) {
+    return (s || '').trim().toLowerCase().replace(/\s+/g, ' ');
+  }
+
+  function answersMatch(user, correct) {
+    const u = normalize(user);
+    const c = normalize(correct);
+    if (u === c) return true;
+    // allow matching any alternative separated by / 
+    const parts = correct.split('/').map(p => normalize(p));
+    if (parts.some(p => p === u)) return true;
+    // also allow without punctuation differences for common cases
+    const strip = t => t.replace(/[()\[\].,'%]/g, '').replace(/\s+/g, ' ').trim();
+    if (strip(u) === strip(c)) return true;
+    if (parts.some(p => strip(p) === strip(u))) return true;
+    return false;
+  }
+
+  function showFeedback(ok, correctText) {
+    qFeedback.className = 'quiz-feedback show ' + (ok ? 'ok' : 'bad');
+    qFeedback.textContent = ok ? '正確！✓' : ('不正確。正確答案：' + correctText);
+  }
+
+  function markAnswer(ok) {
+    if (answered) return;
+    answered = true;
+    total++;
+    if (ok) score++;
+    updateStats();
+  }
+
+  function nextQuestion() {
+    answered = false;
+    qFeedback.className = 'quiz-feedback';
+    qFeedback.textContent = '';
+    current = pool[Math.floor(Math.random() * pool.length)];
+    const en2zh = mode.startsWith('en2zh');
+    const isMc = mode.endsWith('-mc');
+    qLabel.textContent = en2zh ? '英文' : '中文';
+    qPrompt.textContent = en2zh ? current.en : current.zh;
+    qCat.textContent = '分類：' + current.cat;
+    qBody.innerHTML = '';
+
+    if (isMc) {
+      const key = en2zh ? 'zh' : 'en';
+      const correct = current[key];
+      const opts = shuffle([correct, ...pickWrong(current, key, 3)]);
+      const wrap = document.createElement('div');
+      wrap.className = 'quiz-options';
+      opts.forEach(opt => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'quiz-opt';
+        b.textContent = opt;
+        b.addEventListener('click', () => {
+          if (answered) return;
+          const ok = opt === correct;
+          markAnswer(ok);
+          wrap.querySelectorAll('.quiz-opt').forEach(el => {
+            el.disabled = true;
+            if (el.textContent === correct) el.classList.add('correct');
+            else if (el === b && !ok) el.classList.add('wrong');
+          });
+          showFeedback(ok, correct);
+        });
+        wrap.appendChild(b);
+      });
+      qBody.appendChild(wrap);
+    } else {
+      const key = en2zh ? 'zh' : 'en';
+      const correct = current[key];
+      const row = document.createElement('div');
+      row.className = 'quiz-type-row';
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.placeholder = en2zh ? '輸入中文……' : 'Type English…';
+      input.autocomplete = 'off';
+      input.autocapitalize = 'off';
+      const submit = document.createElement('button');
+      submit.type = 'button';
+      submit.className = 'btn btn-primary';
+      submit.textContent = '提交';
+      const check = () => {
+        if (answered) return;
+        const ok = answersMatch(input.value, correct);
+        markAnswer(ok);
+        input.disabled = true;
+        submit.disabled = true;
+        showFeedback(ok, correct);
+      };
+      submit.addEventListener('click', check);
+      input.addEventListener('keydown', e => { if (e.key === 'Enter') check(); });
+      row.appendChild(input);
+      row.appendChild(submit);
+      qBody.appendChild(row);
+      setTimeout(() => input.focus(), 50);
+    }
+  }
+
+  document.getElementById('qNext').addEventListener('click', nextQuestion);
+  document.getElementById('qReset').addEventListener('click', () => {
+    score = 0; total = 0; updateStats(); nextQuestion();
+  });
+
+
+  // ===== Word Cards + speechSynthesis =====
+  const CARD_CATS = (function buildCats() {
+    const cats = [];
+    const push = (id, label, items, enFirst) => {
+      const ents = items.map(pair => {
+        const en = enFirst ? pair[0] : pair[1];
+        const zh = enFirst ? pair[1] : pair[0];
+        return { en, zh, cat: label };
+      });
+      cats.push({ id, label, ents });
+    };
+    push('months', '1 月份', DATA.months, false);
+    push('seasons', '1 四季', DATA.seasons, false);
+    push('frequency', '1 時間頻率', DATA.frequency, true);
+    push('days', '2 星期', DATA.days, false);
+    push('sports', '3 運動', DATA.sports, true);
+    push('jobs', '4 職業', DATA.jobs, true);
+    push('measurement', '5 計量與數量', DATA.measurement, true);
+    push('time', '6 時間', DATA.time, true);
+    push('countries', '7 國家與城市', DATA.countries, true);
+    push('nationality', '8 國籍', DATA.nationality, true);
+    push('tourist', '9 香港旅遊景點', DATA.tourist, true);
+    push('research', '10 研究與報告', DATA.research, true);
+    push('direction', '11 方向', DATA.direction, true);
+    push('geometry', '12 幾何與形狀', DATA.geometry, true);
+    push('health', '13 健康', DATA.health, true);
+    push('home', '14 家居', DATA.home, true);
+    const stOrder = ['kt','tw','il','tko','sil','tc','er','tm1','tm2'];
+    const stShort = {
+      kt:'觀塘線', tw:'荃灣線', il:'港島線', tko:'將軍澳線', sil:'南港島線',
+      tc:'東涌／迪士尼／機場', er:'東鐵線', tm1:'屯馬線（烏溪沙→土瓜灣）', tm2:'屯馬線（黃埔→屯門）'
+    };
+    stOrder.forEach(sid => {
+      const st = DATA.stations[sid];
+      push('mtr-' + sid, 'MTR · ' + stShort[sid], st.items, false);
+    });
+    return cats;
+  })();
+
+  const allCards = [];
+  CARD_CATS.forEach(c => c.ents.forEach(e => {
+    allCards.push({ en: e.en, zh: e.zh, cat: e.cat, list: c.id });
+  }));
+
+  let cardCur = 'all';
+  let cardLang = 'yue';
+  const cardFilters = document.getElementById('cardFilters');
+  const cardGrid = document.getElementById('cardGrid');
+  const cardCount = document.getElementById('cardCount');
+  const cardSearch = document.getElementById('cardSearch');
+  const vnote = document.getElementById('vnote');
+
+  function escHtml(s) {
+    return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  }
+
+  // filter chips
+  const filterDefs = [{ id: 'all', label: '全部（' + allCards.length + '）' }].concat(
+    CARD_CATS.map(c => ({ id: c.id, label: c.label + '（' + c.ents.length + '）' }))
+  );
+  filterDefs.forEach(f => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.textContent = f.label;
+    b.dataset.id = f.id;
+    if (f.id === 'all') b.className = 'on';
+    b.addEventListener('click', () => {
+      cardCur = f.id;
+      cardFilters.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+      renderCards();
+    });
+    cardFilters.appendChild(b);
+  });
+
+  document.querySelectorAll('#langTog button').forEach(b => {
+    b.addEventListener('click', () => {
+      cardLang = b.dataset.l;
+      document.querySelectorAll('#langTog button').forEach(x => x.classList.toggle('on', x === b));
+    });
+  });
+  cardSearch.addEventListener('input', renderCards);
+
+  // speechSynthesis (same approach as 中英對照字詞卡)
+  const SS = window.speechSynthesis;
+  let voices = [];
+  function loadVoices() {
+    voices = SS ? SS.getVoices() : [];
+    const hasZh = voices.some(v => /^(zh|yue|cmn)/i.test(v.lang));
+    vnote.style.display = (!SS || (voices.length && !hasZh)) ? 'block' : 'none';
+  }
+  if (SS) {
+    loadVoices();
+    SS.onvoiceschanged = loadVoices;
+    setTimeout(loadVoices, 1500);
+  } else {
+    loadVoices();
+  }
+  function pickVoice(prefs) {
+    for (const p of prefs) {
+      const v = voices.find(v => v.lang.replace('_', '-').toLowerCase().startsWith(p.toLowerCase()));
+      if (v) return v;
+    }
+    return null;
+  }
+  function speak(t, prefs) {
+    if (!SS) { vnote.style.display = 'block'; return; }
+    SS.cancel();
+    const text = String(t).replace(/[／/]/g, '，').replace(/⋯⋯|\.\.\./g, '');
+    const u = new SpeechSynthesisUtterance(text);
+    const v = pickVoice(prefs);
+    if (v) { u.voice = v; u.lang = v.lang; }
+    else u.lang = prefs[0];
+    u.rate = 0.9;
+    SS.speak(u);
+  }
+  function sayZh(t) {
+    speak(t, cardLang === 'yue'
+      ? ['zh-HK', 'yue', 'zh-TW', 'zh-CN', 'zh']
+      : ['zh-CN', 'cmn', 'zh-TW', 'zh-HK', 'zh']);
+  }
+  function sayEn(t) {
+    speak(t, ['en-GB', 'en-US', 'en']);
+  }
+
+  function renderCards() {
+    const q = (cardSearch.value || '').trim().toLowerCase();
+    const res = allCards.filter(e =>
+      (cardCur === 'all' || e.list === cardCur) &&
+      (!q || e.en.toLowerCase().includes(q) || e.zh.toLowerCase().includes(q))
+    );
+    cardCount.textContent = '共 ' + res.length + ' 張卡';
+    cardGrid.innerHTML = '';
+    res.forEach(e => {
+      const d = document.createElement('div');
+      d.className = 'flip-card';
+      // Front = English (enrichment focus); Back = Chinese
+      d.innerHTML =
+        '<div class="inner">' +
+          '<div class="face front">' +
+            '<div class="tag">' + escHtml(e.cat) + '</div>' +
+            '<div class="big-en">' + escHtml(e.en) + '</div>' +
+            '<div class="hint">輕觸或按「翻轉」看中文</div>' +
+            '<div class="card-btns">' +
+              '<button type="button" class="se">🔊 English</button>' +
+              '<button type="button" class="fl">🔄 翻轉</button>' +
+            '</div>' +
+          '</div>' +
+          '<div class="face back">' +
+            '<div class="tag">' + escHtml(e.en) + '</div>' +
+            '<div class="big-zh">' + escHtml(e.zh) + '</div>' +
+            '<div class="card-btns">' +
+              '<button type="button" class="sz">🔊 朗讀中文</button>' +
+              '<button type="button" class="se">🔊 English</button>' +
+              '<button type="button" class="fl">🔄 翻轉</button>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+      const flip = (ev) => {
+        if (ev && ev.target.closest('button')) return;
+        d.classList.toggle('flip');
+      };
+      d.addEventListener('click', flip);
+      d.querySelectorAll('.fl').forEach(b => b.addEventListener('click', ev => {
+        ev.stopPropagation();
+        d.classList.toggle('flip');
+      }));
+      d.querySelectorAll('.se').forEach(b => b.addEventListener('click', ev => {
+        ev.stopPropagation();
+        sayEn(e.en);
+      }));
+      d.querySelectorAll('.sz').forEach(b => b.addEventListener('click', ev => {
+        ev.stopPropagation();
+        // strip 詞性 prefix for clearer speech (n. / phr.)
+        const zhSpeak = e.zh.replace(/^(n\.|phr\.|v\.|adj\.|adv\.)\s*/i, '');
+        sayZh(zhSpeak);
+      }));
+      cardGrid.appendChild(d);
+    });
+  }
+  renderCards();
+
+  // Mode tabs
+  const browseBlock = document.getElementById('browseBlock');
+  const cardsBlock = document.getElementById('cardsBlock');
+  function setMode(mode) {
+    document.querySelectorAll('.mode-tabs .mode-btn').forEach(b => {
+      b.classList.toggle('on', b.dataset.mode === mode || (mode === 'quiz' && b.dataset.mode === 'quiz'));
+    });
+    if (mode === 'cards') {
+      browseBlock.classList.add('hidden-mode');
+      cardsBlock.classList.remove('hidden-mode');
+      history.replaceState(null, '', '#wordcards');
+    } else if (mode === 'quiz') {
+      browseBlock.classList.remove('hidden-mode');
+      cardsBlock.classList.add('hidden-mode');
+      document.getElementById('quiz').scrollIntoView({ behavior: 'smooth' });
+      history.replaceState(null, '', '#quiz');
+    } else {
+      browseBlock.classList.remove('hidden-mode');
+      cardsBlock.classList.add('hidden-mode');
+      history.replaceState(null, '', '#part1');
+    }
+  }
+  document.getElementById('modeBrowse').addEventListener('click', () => setMode('browse'));
+  document.getElementById('modeCards').addEventListener('click', () => setMode('cards'));
+  document.getElementById('modeQuizJump').addEventListener('click', () => setMode('quiz'));
+  document.getElementById('goCards')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    setMode('cards');
+    document.getElementById('wordcards').scrollIntoView({ behavior: 'smooth' });
+  });
+  document.querySelector('a[href="#wordcards"]')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    setMode('cards');
+    document.getElementById('wordcards').scrollIntoView({ behavior: 'smooth' });
+  });
+  if (location.hash === '#wordcards') setMode('cards');
+
+  updateStats();
+  nextQuestion();
+})();
+</script>
+</body>
+</html>
